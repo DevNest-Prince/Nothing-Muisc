@@ -30,7 +30,7 @@ export default function FAQPage() {
       <section className="section section-alt container-main">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="mb-4">Still Have Questions?</h2>
-          <p className="text-lg text-slate-300 mb-8">
+          <p className="text-lg text-zinc-300 mb-8">
             Can't find what you're looking for? Get in touch with our support team or join our Discord community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -46,3 +46,4 @@ export default function FAQPage() {
     </>
   );
 }
+

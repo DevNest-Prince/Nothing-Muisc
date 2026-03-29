@@ -8,13 +8,13 @@ export default function NotFound() {
         
         <h1 className="mb-4">Page Not Found</h1>
         
-        <p className="text-slate-400 text-lg mb-8">
+        <p className="text-zinc-400 text-lg mb-8">
           Oops! The page you're looking for doesn't exist. Let's get you back on track.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/" className="btn btn-primary">
-            ← Back Home
+             Back Home
           </Link>
           <Link href="/contact" className="btn btn-outline">
             Report Issue
@@ -24,3 +24,4 @@ export default function NotFound() {
     </div>
   );
 }
+

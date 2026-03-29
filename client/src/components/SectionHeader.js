@@ -7,7 +7,8 @@ export default function SectionHeader({ title, subtitle, badge }) {
         </div>
       )}
       <h2 className="mb-4">{title}</h2>
-      {subtitle && <p className="text-lg text-slate-400 max-w-2xl mx-auto">{subtitle}</p>}
+      {subtitle && <p className="text-lg text-zinc-400 max-w-2xl mx-auto">{subtitle}</p>}
     </div>
   );
 }
+

@@ -18,7 +18,7 @@ export default function AboutPage() {
         {/* Mission */}
         <div className="card mb-8">
           <h2 className="mb-4">Our Mission</h2>
-          <p className="text-slate-400 leading-relaxed">
+          <p className="text-zinc-400 leading-relaxed">
             Nothing was created with a simple mission: to provide Discord communities with the most intuitive,
             powerful, and reliable music bot available. We believe that music is essential to community building, and
             every Discord server deserves access to world-class music features without complexity or limitations.
@@ -28,12 +28,12 @@ export default function AboutPage() {
         {/* Story */}
         <div className="card mb-8">
           <h2 className="mb-4">Our Story</h2>
-          <p className="text-slate-400 leading-relaxed mb-4">
+          <p className="text-zinc-400 leading-relaxed mb-4">
             Nothing was born from frustration. Our founder, a Discord server administrator, struggled to find a music
             bot that was both powerful and easy to use. Existing solutions were either overly complicated or lacked
             essential features. So in 2023, we decided to build something better.
           </p>
-          <p className="text-slate-400 leading-relaxed">
+          <p className="text-zinc-400 leading-relaxed">
             Today, Nothing serves over 1 million users across 50,000+ Discord servers, processing millions of songs
             per day. We've stayed true to our original vision: creating a bot that just works, with intuitive commands
             and rock-solid reliability.
@@ -46,23 +46,23 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: '🎯 Simplicity',
+                title: ' Simplicity',
                 description:
                   'We believe great software should be simple. Nothing is designed to be intuitive and easy to use.',
               },
               {
-                title: '🤝 Community',
+                title: ' Community',
                 description:
                   'Our users drive our development. We listen to feedback and continuously improve based on community needs.',
               },
               {
-                title: '⚡ Reliability',
+                title: ' Reliability',
                 description: 'We maintain 99.9% uptime and constantly work to ensure Nothing is always there for you.',
               },
             ].map((value, idx) => (
               <div key={idx} className="card">
                 <h3 className="mb-3">{value.title}</h3>
-                <p className="text-slate-400">{value.description}</p>
+                <p className="text-zinc-400">{value.description}</p>
               </div>
             ))}
           </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
         {/* Team */}
         <div className="card mb-8">
           <h2 className="mb-6">Our Team</h2>
-          <p className="text-slate-400 mb-6">
+          <p className="text-zinc-400 mb-6">
             Nothing is built by a passionate team of developers, designers, and music enthusiasts who believe in the
             power of great software. We're based around the world and connected by our shared mission.
           </p>
@@ -83,9 +83,9 @@ export default function AboutPage() {
               { name: 'Infrastructure', title: 'DevOps & Reliability' },
               { name: 'Music Engineer', title: 'Audio & Streaming' },
             ].map((member, idx) => (
-              <div key={idx} className="bg-slate-800 rounded-lg p-4 border border-slate-700">
-                <p className="font-bold text-purple-400">{member.name}</p>
-                <p className="text-sm text-slate-400">{member.title}</p>
+              <div key={idx} className="bg-zinc-900 rounded-lg p-4 border border-zinc-800">
+                <p className="font-bold text-orange-400">{member.name}</p>
+                <p className="text-sm text-zinc-400">{member.title}</p>
               </div>
             ))}
           </div>
@@ -103,7 +103,7 @@ export default function AboutPage() {
             ].map((stat, idx) => (
               <div key={idx} className="card text-center">
                 <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
-                <p className="text-slate-400 text-sm">{stat.label}</p>
+                <p className="text-zinc-400 text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -112,7 +112,7 @@ export default function AboutPage() {
         {/* Tech Stack */}
         <div className="card mb-8">
           <h2 className="mb-4">Technology</h2>
-          <p className="text-slate-400 mb-4">Nothing is built on modern, scalable technology:</p>
+          <p className="text-zinc-400 mb-4">Nothing is built on modern, scalable technology:</p>
           <div className="grid md:grid-cols-2 gap-4">
             {[
               'Discord.js for bot framework',
@@ -124,8 +124,8 @@ export default function AboutPage() {
               'Next.js for web interface',
               'React for UI components',
             ].map((tech, idx) => (
-              <div key={idx} className="flex items-center gap-2 text-slate-400">
-                <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
+              <div key={idx} className="flex items-center gap-2 text-zinc-400">
+                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
                 {tech}
               </div>
             ))}
@@ -133,17 +133,17 @@ export default function AboutPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="card bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-600/50 text-center">
+        <div className="card bg-gradient-to-r from-orange-500/20 to-amber-500/20 border-orange-500/50 text-center">
           <h2 className="mb-4">Join Our Community</h2>
-          <p className="text-slate-400 mb-6">
+          <p className="text-zinc-400 mb-6">
             Be part of something special. Join thousands of successful Discord communities powered by Nothing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href={SITE_CONFIG.bot.inviteUrl} target="_blank" variant="primary" size="lg">
-              🚀 Add to Discord
+               Add to Discord
             </Button>
             <Button href={SITE_CONFIG.links.discord} target="_blank" variant="outline" size="lg">
-              💬 Join Community
+               Join Community
             </Button>
           </div>
         </div>
@@ -151,3 +151,4 @@ export default function AboutPage() {
     </>
   );
 }
+

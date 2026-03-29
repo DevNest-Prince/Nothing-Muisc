@@ -39,37 +39,37 @@ export const FEATURES = [
     id: 1,
     title: 'Crystal Clear Audio',
     description: 'High-quality 320kbps audio streaming from multiple sources including YouTube, Spotify, and more.',
-    icon: '🎵',
+    icon: '',
   },
   {
     id: 2,
     title: 'Smart Playlist Management',
     description: 'Create, share, and collaborate on playlists with your server members in real-time.',
-    icon: '📋',
+    icon: '',
   },
   {
     id: 3,
     title: 'AI Recommendations',
     description: 'Get personalized music recommendations based on your listening habits and preferences.',
-    icon: '🤖',
+    icon: '',
   },
   {
     id: 4,
     title: 'Advanced Search',
     description: 'Powerful search functionality across multiple music providers and services.',
-    icon: '🔍',
+    icon: '',
   },
   {
     id: 5,
     title: 'Queue Management',
     description: 'Full control over your music queue with skip, loop, shuffle, and more.',
-    icon: '⏸️',
+    icon: '',
   },
   {
     id: 6,
     title: 'Lyrics Display',
     description: 'View real-time lyrics for the currently playing track directly in Discord.',
-    icon: '📝',
+    icon: '',
   },
 ];
 

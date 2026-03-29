@@ -13,7 +13,7 @@ export default function Home() {
       {/* Features Section */}
       <section className="section container-main">
         <SectionHeader
-          badge="🎯 Key Features"
+          badge=" Key Features"
           title="Everything You Need"
           subtitle="Nothing bot packs powerful features to enhance your Discord server's music experience"
         />
@@ -25,7 +25,7 @@ export default function Home() {
         <div className="container-main">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="mb-6">Ready to Transform Your Server?</h2>
-            <p className="text-lg text-slate-300 mb-8">
+            <p className="text-lg text-zinc-300 mb-8">
               Join thousands of Discord servers already using Nothing for their music needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -51,7 +51,7 @@ export default function Home() {
           ].map((stat, idx) => (
             <div key={idx} className="card text-center">
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">{stat.value}</div>
-              <p className="text-slate-400">{stat.label}</p>
+              <p className="text-zinc-400">{stat.label}</p>
             </div>
           ))}
         </div>

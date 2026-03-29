@@ -9,10 +9,10 @@ export default function Alert({ type = 'info', title, children, className }) {
   };
 
   const icons = {
-    info: 'ℹ️',
-    success: '✓',
-    warning: '⚠️',
-    error: '✕',
+    info: '',
+    success: '',
+    warning: '',
+    error: '',
   };
 
   return (
