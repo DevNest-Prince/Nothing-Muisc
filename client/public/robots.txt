@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://nothing-bot.com/sitemap.xml
+
+# Disallow admin/private areas if any
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl delay (1 second)
+Crawl-delay: 1
