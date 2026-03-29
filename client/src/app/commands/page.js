@@ -32,8 +32,8 @@ export default function CommandsPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   selectedCategory === category
-                    ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/50'
-                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                    ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/50'
+                    : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800'
                 }`}
               >
                 {category}
@@ -51,36 +51,36 @@ export default function CommandsPage() {
 
         {filteredCommands.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-slate-400 text-lg">No commands found</p>
+            <p className="text-zinc-400 text-lg">No commands found</p>
           </div>
         )}
       </section>
 
       {/* Command Help Section */}
       <section className="section section-alt container-main">
-        <SectionHeader badge="❓ Need Help?" title="Using Commands" subtitle="Basic guidelines for using Nothing commands" />
+        <SectionHeader badge=" Need Help?" title="Using Commands" subtitle="Basic guidelines for using Nothing commands" />
 
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="card">
             <h3 className="mb-3">Command Syntax</h3>
-            <p className="text-slate-400 mb-3">Commands follow this basic syntax:</p>
-            <div className="bg-slate-900 rounded p-3 font-mono text-sm text-slate-300 break-all">
+            <p className="text-zinc-400 mb-3">Commands follow this basic syntax:</p>
+            <div className="bg-zinc-950 rounded p-3 font-mono text-sm text-zinc-300 break-all">
               {SITE_CONFIG.bot.prefix}command [options] [arguments]
             </div>
           </div>
 
           <div className="card">
             <h3 className="mb-3">Aliases</h3>
-            <p className="text-slate-400">
+            <p className="text-zinc-400">
               Most commands have shorter aliases for quick typing. For example, you can type{' '}
-              <code className="bg-slate-900 px-2 py-1 rounded">!p song name</code> instead of{' '}
-              <code className="bg-slate-900 px-2 py-1 rounded">!play song name</code>.
+              <code className="bg-zinc-950 px-2 py-1 rounded">!p song name</code> instead of{' '}
+              <code className="bg-zinc-950 px-2 py-1 rounded">!play song name</code>.
             </p>
           </div>
 
           <div className="card">
             <h3 className="mb-3">Permissions</h3>
-            <p className="text-slate-400">
+            <p className="text-zinc-400">
               Some commands require specific Discord permissions. Server administrators can configure which roles
               can use specific commands. Check with your server admin for permission details.
             </p>
@@ -90,3 +90,4 @@ export default function CommandsPage() {
     </>
   );
 }
+

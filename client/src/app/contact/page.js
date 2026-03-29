@@ -41,26 +41,26 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {/* Contact Info */}
           <div className="card">
-            <h3 className="mb-4">📧 Email</h3>
-            <p className="text-slate-400 mb-3">Send us an email anytime</p>
-            <a href="mailto:support@nothing-bot.com" className="text-purple-400 hover:text-purple-300">
+            <h3 className="mb-4"> Email</h3>
+            <p className="text-zinc-400 mb-3">Send us an email anytime</p>
+            <a href="mailto:support@nothing-bot.com" className="text-orange-400 hover:text-orange-300">
               support@nothing-bot.com
             </a>
           </div>
 
           <div className="card">
-            <h3 className="mb-4">💬 Discord</h3>
-            <p className="text-slate-400 mb-3">Join our support server</p>
-            <a href={SITE_CONFIG.links.discord} target="_blank" className="text-purple-400 hover:text-purple-300">
-              Join Server →
+            <h3 className="mb-4"> Discord</h3>
+            <p className="text-zinc-400 mb-3">Join our support server</p>
+            <a href={SITE_CONFIG.links.discord} target="_blank" className="text-orange-400 hover:text-orange-300">
+              Join Server 
             </a>
           </div>
 
           <div className="card">
-            <h3 className="mb-4">🐙 GitHub</h3>
-            <p className="text-slate-400 mb-3">Report issues or contribute</p>
-            <a href={SITE_CONFIG.links.github} target="_blank" className="text-purple-400 hover:text-purple-300">
-              View Repository →
+            <h3 className="mb-4"> GitHub</h3>
+            <p className="text-zinc-400 mb-3">Report issues or contribute</p>
+            <a href={SITE_CONFIG.links.github} target="_blank" className="text-orange-400 hover:text-orange-300">
+              View Repository 
             </a>
           </div>
         </div>
@@ -71,14 +71,14 @@ export default function ContactPage() {
 
           {submitted ? (
             <div className="bg-green-900/30 border border-green-700/50 text-green-100 p-6 rounded-lg text-center animate-fade-in">
-              <h3 className="font-bold mb-2">✓ Message Sent!</h3>
+              <h3 className="font-bold mb-2"> Message Sent!</h3>
               <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                  <label className="block text-sm font-medium text-zinc-300 mb-2">Name</label>
                   <input
                     type="text"
                     name="name"
@@ -89,7 +89,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                  <label className="block text-sm font-medium text-zinc-300 mb-2">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -102,7 +102,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">Subject</label>
+                <label className="block text-sm font-medium text-zinc-300 mb-2">Subject</label>
                 <input
                   type="text"
                   name="subject"
@@ -114,7 +114,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                <label className="block text-sm font-medium text-zinc-300 mb-2">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -140,19 +140,20 @@ export default function ContactPage() {
 
         <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           <Button href="/docs" variant="secondary" size="lg">
-            📚 Read Documentation
+             Read Documentation
           </Button>
           <Button href="/faq" variant="secondary" size="lg">
-            ❓ View FAQ
+             View FAQ
           </Button>
           <Button href={SITE_CONFIG.links.github} target="_blank" variant="secondary" size="lg">
-            🐙 GitHub Issues
+             GitHub Issues
           </Button>
           <Button href={SITE_CONFIG.links.discord} target="_blank" variant="secondary" size="lg">
-            💬 Discord Server
+             Discord Server
           </Button>
         </div>
       </section>
     </>
   );
 }
+
