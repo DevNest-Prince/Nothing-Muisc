@@ -11,11 +11,11 @@ export default function Error({ error, reset }) {
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-200px)] container-main">
       <div className="text-center max-w-md">
-        <div className="text-6xl font-bold gradient-text mb-4">😕</div>
+        <div className="text-6xl font-bold gradient-text mb-4"></div>
         
         <h1 className="mb-4">Something Went Wrong</h1>
         
-        <p className="text-slate-400 text-lg mb-8">
+        <p className="text-zinc-400 text-lg mb-8">
           We encountered an unexpected error. Our team has been notified.
         </p>
 
@@ -32,11 +32,12 @@ export default function Error({ error, reset }) {
         </div>
 
         {process.env.NODE_ENV === 'development' && (
-          <div className="mt-8 p-4 bg-slate-800 rounded border border-slate-700">
-            <p className="text-xs text-slate-400 font-mono break-all">{error.message}</p>
+          <div className="mt-8 p-4 bg-zinc-900 rounded border border-zinc-800">
+            <p className="text-xs text-zinc-400 font-mono break-all">{error.message}</p>
           </div>
         )}
       </div>
     </div>
   );
 }
+
