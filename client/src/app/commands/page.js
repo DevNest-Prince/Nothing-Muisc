@@ -50,7 +50,7 @@ export default function CommandsPage() {
       </section>
 
       <section className="container-main commands-content">
-        <div className="commands-toolbar animate-slide-in">
+        <div className="commands-toolbar animate-slide-in" suppressHydrationWarning>
           <div>
             <h2>Browse by Category</h2>
             <p>Pick a section or search by command, alias, or usage syntax.</p>
@@ -64,15 +64,18 @@ export default function CommandsPage() {
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search: play, queue, volume..."
               className="commands-search"
+              suppressHydrationWarning
             />
           </label>
 
-          <div className="commands-filter-row">
+          <div className="commands-filter-row" suppressHydrationWarning>
             {categories.map((category) => (
               <button
                 key={category}
+                type="button"
                 onClick={() => setSelectedCategory(category)}
                 className={`commands-filter-pill ${selectedCategory === category ? 'commands-filter-pill-active' : ''}`}
+                suppressHydrationWarning
               >
                 {category}
               </button>

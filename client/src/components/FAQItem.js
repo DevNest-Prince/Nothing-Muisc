@@ -8,9 +8,11 @@ export default function FAQItem({ item }) {
   return (
     <article className={`faq-item ${open ? 'faq-item-open' : ''}`}>
       <button
+        type="button"
         onClick={() => setOpen(!open)}
         className="faq-item-trigger"
         aria-expanded={open}
+        suppressHydrationWarning
       >
         <h3>{item.question}</h3>
         <span className="faq-item-icon" aria-hidden="true">
