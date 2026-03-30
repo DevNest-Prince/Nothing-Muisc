@@ -2927,6 +2927,42 @@ input, textarea, select {
   font-weight: 700;
 }
 
+.home-hero-covers {
+  margin-top: 0.56rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.48rem;
+}
+
+.home-hero-cover-card {
+  border-radius: 0.72rem;
+  border: 1px solid rgba(113, 113, 122, 0.24);
+  background: rgba(24, 24, 27, 0.58);
+  padding: 0.4rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.home-hero-cover-image {
+  border-radius: 0.58rem;
+  object-fit: cover;
+}
+
+.home-hero-cover-title {
+  margin-top: 0;
+  color: #f8fafc;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.home-hero-cover-subtitle {
+  margin-top: 0.1rem;
+  color: #a1a1aa;
+  font-size: 0.67rem;
+}
+
 .home-hero-highlight-grid {
   margin-top: 0.52rem;
   display: grid;
@@ -3033,14 +3069,28 @@ input, textarea, select {
   letter-spacing: 0.09em;
 }
 
+.home-preview-track-head {
+  margin-top: 0.45rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.home-preview-cover {
+  border-radius: 0.62rem;
+  border: 1px solid rgba(251, 146, 60, 0.26);
+  object-fit: cover;
+}
+
 .home-preview-track h3 {
-  margin-top: 0.3rem;
+  margin-top: 0;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.94rem;
 }
 
 .home-preview-track p {
-  margin-top: 0.25rem;
+  margin-top: 0.18rem;
   color: #a1a1aa;
   font-size: 0.8rem;
 }

@@ -1,6 +1,7 @@
 ﻿'use client';
 
 import { SITE_CONFIG } from '@/config/site';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import {
@@ -111,6 +112,11 @@ const FLOATING_MUSIC_ICONS = [
   { icon: FiSliders, className: 'home-float-c' },
   { icon: FiZap, className: 'home-float-d' },
   { icon: FiMusic, className: 'home-float-e' },
+];
+
+const HERO_COVER_CARDS = [
+  { title: 'Top Indian Mix', subtitle: 'Live rotations', image: '/mintone.jpg' },
+  { title: 'Chill Queue', subtitle: 'Community picks', image: '/mintone.jpg' },
 ];
 
 function formatTime(totalSeconds) {
@@ -227,6 +233,17 @@ export default function Home() {
 
             <div className="home-hero-extra">
               <p className="home-hero-extra-title">Why servers keep Nothing active</p>
+              <div className="home-hero-covers">
+                {HERO_COVER_CARDS.map((item) => (
+                  <article key={item.title} className="home-hero-cover-card">
+                    <Image src={item.image} alt={item.title} width={56} height={56} className="home-hero-cover-image" />
+                    <div>
+                      <p className="home-hero-cover-title">{item.title}</p>
+                      <p className="home-hero-cover-subtitle">{item.subtitle}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
               <div className="home-hero-highlight-grid">
                 {HERO_HIGHLIGHTS.map((item) => {
                   const Icon = item.icon;
@@ -253,8 +270,13 @@ export default function Home() {
             </div>
             <div className="home-preview-track">
               <p className="home-preview-now">Now Playing</p>
-              <h3>{currentTrack.title}</h3>
-              <p>Queued by {currentTrack.queuedBy}</p>
+              <div className="home-preview-track-head">
+                <Image src="/mintone.jpg" alt="Current track cover" width={54} height={54} className="home-preview-cover" />
+                <div>
+                  <h3>{currentTrack.title}</h3>
+                  <p>Queued by {currentTrack.queuedBy}</p>
+                </div>
+              </div>
               <div className="home-preview-meta">
                 <span>{formatTime(elapsedSec)} / {formatTime(currentTrack.durationSec)}</span>
                 <span>Queue: {queueTracks.length} tracks</span>
