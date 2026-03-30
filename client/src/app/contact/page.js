@@ -1,7 +1,5 @@
 'use client';
 
-import SectionHeader from '@/components/SectionHeader';
-import Button from '@/components/Button';
 import { SITE_CONFIG } from '@/config/site';
 import { useState } from 'react';
 
@@ -14,6 +12,29 @@ export default function ContactPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+
+  const contactCards = [
+    {
+      title: 'Email',
+      subtitle: 'Send questions any time',
+      href: 'mailto:support@nothing-bot.com',
+      label: 'support@nothing-bot.com',
+    },
+    {
+      title: 'Discord',
+      subtitle: 'Live community support',
+      href: SITE_CONFIG.links.discord,
+      label: 'Join Server',
+      external: true,
+    },
+    {
+      title: 'GitHub',
+      subtitle: 'Report issues or contribute',
+      href: SITE_CONFIG.links.github,
+      label: 'View Repository',
+      external: true,
+    },
+  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,53 +53,48 @@ export default function ContactPage() {
   };
 
   return (
-    <>
-      <section className="section gradient-bg container-main">
-        <SectionHeader title="Get in Touch" subtitle="Have questions or feedback? We'd love to hear from you" />
-      </section>
+    <div className="contact-page">
+      <section className="contact-hero container-main">
+        <div className="contact-hero-panel animate-fade-in">
+          <span className="contact-kicker">Reach Out</span>
+          <h1>Get in Touch</h1>
+          <p>Questions, suggestions, or partnership requests. Send us a message and we will reply soon.</p>
 
-      <section className="section container-main max-w-3xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {/* Contact Info */}
-          <div className="card">
-            <h3 className="mb-4"> Email</h3>
-            <p className="text-zinc-400 mb-3">Send us an email anytime</p>
-            <a href="mailto:support@nothing-bot.com" className="text-orange-400 hover:text-orange-300">
-              support@nothing-bot.com
-            </a>
-          </div>
-
-          <div className="card">
-            <h3 className="mb-4"> Discord</h3>
-            <p className="text-zinc-400 mb-3">Join our support server</p>
-            <a href={SITE_CONFIG.links.discord} target="_blank" className="text-orange-400 hover:text-orange-300">
-              Join Server 
-            </a>
-          </div>
-
-          <div className="card">
-            <h3 className="mb-4"> GitHub</h3>
-            <p className="text-zinc-400 mb-3">Report issues or contribute</p>
-            <a href={SITE_CONFIG.links.github} target="_blank" className="text-orange-400 hover:text-orange-300">
-              View Repository 
-            </a>
+          <div className="contact-hero-chips">
+            <span>Support Team</span>
+            <span>Fast Response</span>
+            <span>Community Driven</span>
           </div>
         </div>
+      </section>
 
-        {/* Contact Form */}
-        <div className="card">
-          <h2 className="mb-6">Send us a Message</h2>
+      <section className="container-main contact-main">
+        <div className="contact-card-grid animate-slide-in">
+          {contactCards.map((card) => (
+            <article key={card.title} className="contact-info-card">
+              <h3>{card.title}</h3>
+              <p>{card.subtitle}</p>
+              <a href={card.href} target={card.external ? '_blank' : undefined} rel={card.external ? 'noreferrer' : undefined}>
+                {card.label}
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <section className="contact-form-shell">
+          <h2>Send a Message</h2>
+          <p>Tell us what you need and include as much context as possible.</p>
 
           {submitted ? (
-            <div className="bg-green-900/30 border border-green-700/50 text-green-100 p-6 rounded-lg text-center animate-fade-in">
-              <h3 className="font-bold mb-2"> Message Sent!</h3>
-              <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
+            <div className="contact-success animate-fade-in">
+              <h3>Message Sent</h3>
+              <p>Thank you for reaching out. We will get back to you as soon as possible.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="contact-form-grid">
+              <div className="contact-two-col">
                 <div>
-                  <label className="block text-sm font-medium text-zinc-300 mb-2">Name</label>
+                  <label className="contact-label">Name</label>
                   <input
                     type="text"
                     name="name"
@@ -89,7 +105,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-zinc-300 mb-2">Email</label>
+                  <label className="contact-label">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -102,7 +118,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-zinc-300 mb-2">Subject</label>
+                <label className="contact-label">Subject</label>
                 <input
                   type="text"
                   name="subject"
@@ -114,7 +130,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-zinc-300 mb-2">Message</label>
+                <label className="contact-label">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -126,34 +142,27 @@ export default function ContactPage() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary w-full">
+              <button type="submit" className="contact-submit-btn">
                 Send Message
               </button>
             </form>
           )}
-        </div>
+        </section>
       </section>
 
-      {/* Quick Links Section */}
-      <section className="section section-alt container-main">
-        <SectionHeader title="Other Ways to Connect" subtitle="Explore other resources" />
-
-        <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-          <Button href="/docs" variant="secondary" size="lg">
-             Read Documentation
-          </Button>
-          <Button href="/faq" variant="secondary" size="lg">
-             View FAQ
-          </Button>
-          <Button href={SITE_CONFIG.links.github} target="_blank" variant="secondary" size="lg">
-             GitHub Issues
-          </Button>
-          <Button href={SITE_CONFIG.links.discord} target="_blank" variant="secondary" size="lg">
-             Discord Server
-          </Button>
+      <section className="container-main contact-links-wrap">
+        <div className="contact-links-card">
+          <h2>Other Ways to Connect</h2>
+          <p>Browse docs, open issues, or chat with the community.</p>
+          <div className="contact-links-grid">
+            <a href="/docs" className="contact-link-btn">Read Documentation</a>
+            <a href="/faq" className="contact-link-btn">View FAQ</a>
+            <a href={SITE_CONFIG.links.github} target="_blank" rel="noreferrer" className="contact-link-btn">GitHub Issues</a>
+            <a href={SITE_CONFIG.links.discord} target="_blank" rel="noreferrer" className="contact-link-btn">Discord Server</a>
+          </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
