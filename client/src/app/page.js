@@ -17,6 +17,8 @@ import {
   FiUsers,
   FiZap,
 } from 'react-icons/fi';
+import { FaRecordVinyl } from 'react-icons/fa';
+import { GiGuitar, GiViolin } from 'react-icons/gi';
 
 const HERO_STATS = [
   { value: '50 Lakh+', label: 'Total Users' },
@@ -112,6 +114,9 @@ const FLOATING_MUSIC_ICONS = [
   { icon: FiSliders, className: 'home-float-c' },
   { icon: FiZap, className: 'home-float-d' },
   { icon: FiMusic, className: 'home-float-e' },
+  { icon: GiGuitar, className: 'home-float-f' },
+  { icon: GiViolin, className: 'home-float-g' },
+  { icon: FaRecordVinyl, className: 'home-float-h' },
 ];
 
 const HERO_COVER_CARDS = [
@@ -283,17 +288,13 @@ export default function Home() {
                 <span>Volume: 72%</span>
               </div>
               <div className="home-preview-visualizer">
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
-                <span className="home-visualizer-bar"></span>
+                {Array.from({ length: 20 }).map((_, idx) => (
+                  <span
+                    key={`wave-${idx}`}
+                    className="home-visualizer-bar"
+                    style={{ '--bar-index': idx }}
+                  ></span>
+                ))}
               </div>
               <div className="home-preview-audience">
                 <div className="home-preview-avatars">

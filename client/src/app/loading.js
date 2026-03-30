@@ -1,13 +1,22 @@
+import { FiDisc } from 'react-icons/fi';
+
 export default function Loading() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="text-center">
-        <div className="mb-4">
-          <div className="inline-flex items-center justify-center w-12 h-12 bg-linear-to-br from-orange-500 to-amber-500 rounded-lg animate-pulse">
-            <span className="text-white font-bold text-xl"></span>
-          </div>
+    <div className="app-loading">
+      <div className="app-loading-shell">
+        <div className="app-loading-spinner" aria-hidden="true">
+          <span className="app-loading-ring" />
+          <span className="app-loading-ring app-loading-ring-alt" />
+          <span className="app-loading-core">
+            <FiDisc />
+          </span>
         </div>
-        <p className="text-zinc-400">Loading...</p>
+
+        <div className="app-loading-copy">
+          <p className="app-loading-title">Loading</p>
+          <p className="app-loading-subtitle">Preparing your music experience...</p>
+          <span className="app-loading-dots" aria-hidden="true" />
+        </div>
       </div>
     </div>
   );

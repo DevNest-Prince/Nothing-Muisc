@@ -4,9 +4,7 @@ import { SITE_CONFIG } from '@/config/site';
 export default function HeroSection() {
   return (
     <section className="section gradient-bg relative overflow-hidden">
-      {/* Background gradient orbs */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-amber-500/20 rounded-full blur-3xl"></div>
+      {/* Decorative orbs removed for cleaner neutral look */}
 
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
@@ -36,7 +34,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 pt-12 border-t border-zinc-800/50">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 pt-12 border-t border-zinc-700/80">
             <div>
               <div className="text-2xl md:text-3xl font-bold gradient-text">50K+</div>
               <p className="text-zinc-400 text-sm md:text-base">Servers</p>
