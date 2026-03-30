@@ -24,6 +24,24 @@ const HERO_STATS = [
   { value: '85ms', label: 'Avg Ping' },
 ];
 
+const HERO_HIGHLIGHTS = [
+  {
+    title: 'Reliable Sessions',
+    text: 'Auto reconnect and stable playback for long listening rooms.',
+    icon: FiShield,
+  },
+  {
+    title: 'Fast Controls',
+    text: 'Skip, queue, filters, and commands respond without lag.',
+    icon: FiZap,
+  },
+  {
+    title: 'Cleaner Audio',
+    text: 'Balanced output that stays clear in active voice channels.',
+    icon: FiHeadphones,
+  },
+];
+
 const COMMAND_PREVIEW = [
   { cmd: '!play', desc: 'Play a song or playlist', icon: FiMusic, by: '@nightcorex', time: 'just now' },
   { cmd: '!queue', desc: 'View and organize current queue', icon: FiList, by: '@aryan', time: '12s ago' },
@@ -205,6 +223,26 @@ export default function Home() {
                   <p className="home-stat-label">{stat.label}</p>
                 </article>
               ))}
+            </div>
+
+            <div className="home-hero-extra">
+              <p className="home-hero-extra-title">Why servers keep Nothing active</p>
+              <div className="home-hero-highlight-grid">
+                {HERO_HIGHLIGHTS.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <article key={item.title} className="home-hero-highlight-card">
+                      <span className="home-hero-highlight-icon" aria-hidden="true"><Icon /></span>
+                      <div>
+                        <p className="home-hero-highlight-title">{item.title}</p>
+                        <p className="home-hero-highlight-text">{item.text}</p>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+              <p className="home-hero-trust-badge">24/7 Running • Auto Recovery • No setup friction</p>
             </div>
           </div>
 
