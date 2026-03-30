@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   // URLs
   links: {
     github: 'https://github.com/yourusername/nothing-bot',
-    discord: 'https://discord.gg/yourserver',
+    discord: 'https://discord.gg/BUgMbcGXGP',
     support: 'https://support.nothing-bot.com',
     docs: '/docs',
     api: 'https://api.nothing-bot.com',
@@ -18,7 +18,7 @@ export const SITE_CONFIG = {
   // Bot settings
   bot: {
     prefix: '!',
-    inviteUrl: 'https://discord.com/api/oauth2/authorize?client_id=YOUR_BOT_ID&permissions=3197952&scope=bot%20applications.commands',
+    inviteUrl: 'https://discord.com/oauth2/authorize?client_id=1234592539324059709&permissions=414530792793&integration_type=0&scope=bot+applications.commands',
   },
   
   // Navigation
