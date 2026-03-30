@@ -1,6 +1,7 @@
 ﻿'use client';
 
 import { SITE_CONFIG } from '@/config/site';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import {
@@ -22,6 +23,24 @@ const HERO_STATS = [
   { value: '200+', label: 'Active Servers' },
   { value: '99.4%', label: 'Uptime' },
   { value: '85ms', label: 'Avg Ping' },
+];
+
+const HERO_HIGHLIGHTS = [
+  {
+    title: 'Reliable Sessions',
+    text: 'Auto reconnect and stable playback for long listening rooms.',
+    icon: FiShield,
+  },
+  {
+    title: 'Fast Controls',
+    text: 'Skip, queue, filters, and commands respond without lag.',
+    icon: FiZap,
+  },
+  {
+    title: 'Cleaner Audio',
+    text: 'Balanced output that stays clear in active voice channels.',
+    icon: FiHeadphones,
+  },
 ];
 
 const COMMAND_PREVIEW = [
@@ -93,6 +112,11 @@ const FLOATING_MUSIC_ICONS = [
   { icon: FiSliders, className: 'home-float-c' },
   { icon: FiZap, className: 'home-float-d' },
   { icon: FiMusic, className: 'home-float-e' },
+];
+
+const HERO_COVER_CARDS = [
+  { title: 'Top Indian Mix', subtitle: 'Live rotations', image: '/mintone.jpg' },
+  { title: 'Chill Queue', subtitle: 'Community picks', image: '/mintone.jpg' },
 ];
 
 function formatTime(totalSeconds) {
@@ -206,6 +230,37 @@ export default function Home() {
                 </article>
               ))}
             </div>
+
+            <div className="home-hero-extra">
+              <p className="home-hero-extra-title">Why servers keep Nothing active</p>
+              <div className="home-hero-covers">
+                {HERO_COVER_CARDS.map((item) => (
+                  <article key={item.title} className="home-hero-cover-card">
+                    <Image src={item.image} alt={item.title} width={56} height={56} className="home-hero-cover-image" />
+                    <div>
+                      <p className="home-hero-cover-title">{item.title}</p>
+                      <p className="home-hero-cover-subtitle">{item.subtitle}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+              <div className="home-hero-highlight-grid">
+                {HERO_HIGHLIGHTS.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <article key={item.title} className="home-hero-highlight-card">
+                      <span className="home-hero-highlight-icon" aria-hidden="true"><Icon /></span>
+                      <div>
+                        <p className="home-hero-highlight-title">{item.title}</p>
+                        <p className="home-hero-highlight-text">{item.text}</p>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+              <p className="home-hero-trust-badge">24/7 Running • Auto Recovery • No setup friction</p>
+            </div>
           </div>
 
           <div className="home-hero-preview" aria-hidden="true">
@@ -215,8 +270,13 @@ export default function Home() {
             </div>
             <div className="home-preview-track">
               <p className="home-preview-now">Now Playing</p>
-              <h3>{currentTrack.title}</h3>
-              <p>Queued by {currentTrack.queuedBy}</p>
+              <div className="home-preview-track-head">
+                <Image src="/mintone.jpg" alt="Current track cover" width={54} height={54} className="home-preview-cover" />
+                <div>
+                  <h3>{currentTrack.title}</h3>
+                  <p>Queued by {currentTrack.queuedBy}</p>
+                </div>
+              </div>
               <div className="home-preview-meta">
                 <span>{formatTime(elapsedSec)} / {formatTime(currentTrack.durationSec)}</span>
                 <span>Queue: {queueTracks.length} tracks</span>
