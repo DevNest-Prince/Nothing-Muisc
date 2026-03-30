@@ -100,7 +100,7 @@ export default function ContactPage() {
               <p>Thank you for reaching out. We will get back to you as soon as possible.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="contact-form-grid">
+            <form onSubmit={handleSubmit} className="contact-form-grid" suppressHydrationWarning>
               <div className="contact-two-col">
                 <div>
                   <label className="contact-label">Name</label>
@@ -111,6 +111,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="Your name"
                     required
+                    suppressHydrationWarning
                   />
                 </div>
                 <div>
@@ -122,6 +123,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="your@email.com"
                     required
+                    suppressHydrationWarning
                   />
                 </div>
               </div>
@@ -135,6 +137,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="How can we help?"
                   required
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -148,10 +151,11 @@ export default function ContactPage() {
                   rows="5"
                   required
                   className="resize-none"
+                  suppressHydrationWarning
                 ></textarea>
               </div>
 
-              <button type="submit" className="contact-submit-btn">
+              <button type="submit" className="contact-submit-btn" suppressHydrationWarning>
                 <FiSend aria-hidden="true" />
                 Send Message
               </button>

@@ -252,7 +252,14 @@ export default function Home() {
               <div className="home-hero-covers">
                 {HERO_COVER_CARDS.map((item) => (
                   <article key={item.title} className="home-hero-cover-card">
-                    <Image src={item.image} alt={item.title} width={56} height={56} className="home-hero-cover-image" />
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={56}
+                      height={56}
+                      className="home-hero-cover-image"
+                      style={{ width: '56px', height: '56px' }}
+                    />
                     <div>
                       <p className="home-hero-cover-title">{item.title}</p>
                       <p className="home-hero-cover-subtitle">{item.subtitle}</p>
@@ -287,7 +294,14 @@ export default function Home() {
             <div className="home-preview-track">
               <p className="home-preview-now">Now Playing</p>
               <div className="home-preview-track-head">
-                <Image src="/mintone.jpg" alt="Current track cover" width={54} height={54} className="home-preview-cover" />
+                <Image
+                  src="/mintone.jpg"
+                  alt="Current track cover"
+                  width={54}
+                  height={54}
+                  className="home-preview-cover"
+                  style={{ width: '54px', height: '54px' }}
+                />
                 <div>
                   <h3>{currentTrack.title}</h3>
                   <p>Queued by {currentTrack.queuedBy}</p>

@@ -82,7 +82,7 @@ export default function Footer() {
             
             <div className="footer-newsletter">
               <label className="footer-label">Subscribe for Updates</label>
-              <form onSubmit={handleSubscribe} className="footer-email-form">
+              <form onSubmit={handleSubscribe} className="footer-email-form" suppressHydrationWarning>
                 <input
                   type="email"
                   placeholder="your@email.com"
@@ -90,8 +90,9 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   className="footer-email-input"
                   required
+                  suppressHydrationWarning
                 />
-                <button type="submit" className="footer-email-btn">
+                <button type="submit" className="footer-email-btn" suppressHydrationWarning>
                   {subscribed ? (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
