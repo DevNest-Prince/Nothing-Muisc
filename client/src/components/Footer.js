@@ -48,6 +48,22 @@ export default function Footer() {
               <span className="footer-brand-name">NOTHING</span>
             </div>
             <p className="footer-brand-desc">The perfect Discord music bot companion. Crystal clear audio, smart playlists, and AI recommendations.</p>
+
+            <a
+              href={SITE_CONFIG.links.hostingPartner}
+              target="_blank"
+              rel="noreferrer"
+              className="footer-hosting-partner"
+              aria-label="Glacier Hosting"
+            >
+              <span className="footer-hosting-logo-wrap" aria-hidden="true">
+                <img src="/glacier-hosting-logo.svg" alt="" className="footer-hosting-logo" />
+              </span>
+              <span className="footer-hosting-copy">
+                <span className="footer-hosting-label">Hosting Partner</span>
+                <span className="footer-hosting-name">Glacier Hosting</span>
+              </span>
+            </a>
             
             <div className="footer-newsletter">
               <label className="footer-label">Subscribe for Updates</label>
