@@ -42,7 +42,7 @@ export default function HeroSection() {
               <p className="text-zinc-400 text-sm md:text-base">Servers</p>
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold gradient-text">1M+</div>
+              <div className="text-2xl md:text-3xl font-bold gradient-text">5M+</div>
               <p className="text-zinc-400 text-sm md:text-base">Users</p>
             </div>
             <div>

@@ -1,6 +1,3 @@
-import SectionHeader from '@/components/SectionHeader';
-import Alert from '@/components/Alert';
-import Button from '@/components/Button';
 import { SITE_CONFIG } from '@/config/site';
 
 export const metadata = {
@@ -9,140 +6,158 @@ export const metadata = {
 };
 
 export default function DocsPage() {
+  const quickStart = [
+    {
+      step: '01',
+      title: 'Invite the Bot',
+      detail:
+        'Add Nothing to your Discord server with the required permissions and complete the OAuth prompt.',
+      action: {
+        label: 'Add to Discord',
+        href: SITE_CONFIG.bot.inviteUrl,
+      },
+    },
+    {
+      step: '02',
+      title: 'Join Voice Channel',
+      detail: 'Enter any voice channel, then run a music command so the bot joins automatically.',
+      code: '!play song name',
+    },
+    {
+      step: '03',
+      title: 'Control Playback',
+      detail: 'Use queue and playback commands to skip, pause, reorder songs, and manage sessions.',
+      code: '!queue | !skip | !pause',
+    },
+  ];
+
+  const permissionList = ['Send Messages', 'Embed Links', 'Connect', 'Speak', 'Manage Messages'];
+
   return (
-    <>
-      <section className="section gradient-bg container-main">
-        <SectionHeader title="Documentation" subtitle="Complete guide to setting up and using Nothing" />
-      </section>
-
-      <section className="section container-main max-w-4xl mx-auto">
-        {/* Getting Started */}
-        <div className="mb-12">
-          <h2 className="mb-6"> Getting Started</h2>
-
-          <div className="space-y-6">
-            <div className="card">
-              <h3 className="mb-3">1. Invite the Bot</h3>
-              <p className="text-zinc-400 mb-4">
-                Start by inviting Nothing to your Discord server. Click the button below to authorize the bot with the
-                necessary permissions.
-              </p>
-              <Button href={SITE_CONFIG.bot.inviteUrl} target="_blank" variant="primary">
-                Add to Discord
-              </Button>
-            </div>
-
-            <div className="card">
-              <h3 className="mb-3">2. Connect to Voice Channel</h3>
-              <p className="text-zinc-400">
-                Join a voice channel and use the <code className="bg-zinc-950 px-2 py-1 rounded">!join</code> command
-                or start playing music with <code className="bg-zinc-950 px-2 py-1 rounded">!play song name</code>.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3 className="mb-3">3. Start Playing</h3>
-              <p className="text-zinc-400">
-                Use commands like <code className="bg-zinc-950 px-2 py-1 rounded">!play</code>,{' '}
-                <code className="bg-zinc-950 px-2 py-1 rounded">!skip</code>, and{' '}
-                <code className="bg-zinc-950 px-2 py-1 rounded">!queue</code> to manage your music.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Configuration */}
-        <div className="mb-12">
-          <h2 className="mb-6"> Configuration</h2>
-
-          <div className="space-y-6">
-            <div className="card">
-              <h3 className="mb-3">Bot Prefix</h3>
-              <p className="text-zinc-400 mb-2">Default prefix: <code className="bg-zinc-950 px-2 py-1 rounded">{SITE_CONFIG.bot.prefix}</code></p>
-              <p className="text-zinc-400 text-sm">
-                Power users and server admins can configure a custom prefix for their server using admin commands.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3 className="mb-3">Permissions</h3>
-              <p className="text-zinc-400 mb-3">Nothing requires these Discord permissions:</p>
-              <ul className="list-disc list-inside text-zinc-400 space-y-1 text-sm">
-                <li>Send Messages</li>
-                <li>Embed Links</li>
-                <li>Connect (to voice channels)</li>
-                <li>Speak (in voice channels)</li>
-                <li>Manage Messages</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Features Guide */}
-        <div className="mb-12">
-          <h2 className="mb-6"> Features Guide</h2>
-
-          <div className="space-y-6">
-            <div className="card">
-              <h3 className="mb-3">Playlist Management</h3>
-              <p className="text-zinc-400">
-                Create and manage playlists with <code className="bg-zinc-950 px-2 py-1 rounded">!playlist</code>{' '}
-                commands. Share playlists with your server community or keep them private.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3 className="mb-3">Queue Control</h3>
-              <p className="text-zinc-400">
-                Use queue commands to see upcoming songs, move tracks around, or remove songs using{' '}
-                <code className="bg-zinc-950 px-2 py-1 rounded">!queue</code>,{' '}
-                <code className="bg-zinc-950 px-2 py-1 rounded">!move</code>, and{' '}
-                <code className="bg-zinc-950 px-2 py-1 rounded">!remove</code>.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3 className="mb-3">AI Recommendations</h3>
-              <p className="text-zinc-400">
-                Get smart music recommendations based on what you're currently playing. Use{' '}
-                <code className="bg-zinc-950 px-2 py-1 rounded">!recommend</code> to discover new music.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Troubleshooting */}
-        <div className="mb-12">
-          <h2 className="mb-6"> Troubleshooting</h2>
-
-          <Alert type="warning" title="Bot Not Playing Audio?">
-            Make sure the bot is in the same voice channel as you, and check that it has permission to speak in that
-            channel.
-          </Alert>
-
-          <Alert type="info" title="Command Not Working?" className="mt-4">
-            Some commands require specific permissions. Check that you have the necessary Discord permissions and that
-            the bot has not been restricted by your server admin.
-          </Alert>
-        </div>
-
-        {/* Support */}
-        <div className="card bg-gradient-to-r from-orange-500/20 to-amber-500/20 border-orange-500/50">
-          <h3 className="mb-3">Need More Help?</h3>
-          <p className="text-zinc-400 mb-4">
-            If you're still having issues, join our Discord support server or check out the FAQ page.
+    <div className="docs-page">
+      <section className="docs-hero container-main">
+        <div className="docs-hero-panel animate-fade-in">
+          <span className="docs-kicker">Official Docs</span>
+          <h1>Documentation</h1>
+          <p>
+            Complete setup guide, command workflow, and server configuration tips for the Nothing music bot.
           </p>
-          <div className="flex gap-3">
-            <Button href={SITE_CONFIG.links.discord} target="_blank" variant="primary">
-              Join Support Server
-            </Button>
-            <Button href="/faq" variant="outline">
-              View FAQ
-            </Button>
+
+          <div className="docs-hero-chips">
+            <span>Fast Setup</span>
+            <span>Admin Ready</span>
+            <span>Voice Optimized</span>
           </div>
         </div>
       </section>
-    </>
+
+      <section className="container-main docs-main">
+        <section className="docs-block docs-intro-block animate-slide-in">
+          <div>
+            <h2>Quick Start</h2>
+            <p>
+              Follow these three steps to get music running in less than two minutes. Use the default prefix{' '}
+              <code>{SITE_CONFIG.bot.prefix}</code> unless your server has a custom setup.
+            </p>
+          </div>
+
+          <div className="docs-timeline">
+            {quickStart.map((item) => (
+              <article key={item.step} className="docs-step-card">
+                <span className="docs-step-number">{item.step}</span>
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+
+                {item.code && <code>{item.code}</code>}
+
+                {item.action && (
+                  <a href={item.action.href} target="_blank" rel="noreferrer" className="docs-cta-btn">
+                    {item.action.label}
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="docs-grid-block">
+          <article className="docs-panel-card">
+            <h2>Server Configuration</h2>
+            <p>
+              Admins can customize prefix behavior, command scope, and moderation-friendly playback controls.
+            </p>
+
+            <div className="docs-inline-code">
+              Default prefix
+              <code>{SITE_CONFIG.bot.prefix}</code>
+            </div>
+
+            <p className="docs-muted-text">Use admin commands to set channel rules and command permissions by role.</p>
+          </article>
+
+          <article className="docs-panel-card">
+            <h2>Required Permissions</h2>
+            <p>Make sure these permissions are enabled for smooth playback and command responses.</p>
+            <ul className="docs-permission-list">
+              {permissionList.map((permission) => (
+                <li key={permission}>{permission}</li>
+              ))}
+            </ul>
+          </article>
+        </section>
+
+        <section className="docs-grid-block docs-feature-grid">
+          <article className="docs-panel-card">
+            <h3>Playlist Workflow</h3>
+            <p>Build playlists, save queue states, and share sets across your community channels.</p>
+            <code>!playlist create chill-vibes</code>
+          </article>
+
+          <article className="docs-panel-card">
+            <h3>Queue Management</h3>
+            <p>Reorder, remove, and inspect tracks while the session is running without interrupting music.</p>
+            <code>!queue | !move 3 1 | !remove 2</code>
+          </article>
+
+          <article className="docs-panel-card">
+            <h3>AI Recommendations</h3>
+            <p>Discover matching tracks based on current listening and server activity patterns.</p>
+            <code>!recommend</code>
+          </article>
+        </section>
+
+        <section className="docs-grid-block">
+          <article className="docs-panel-card docs-alert-warning">
+            <h3>Bot not playing audio?</h3>
+            <p>
+              Confirm both you and the bot are in the same voice channel and verify the bot can speak in that channel.
+            </p>
+          </article>
+
+          <article className="docs-panel-card docs-alert-info">
+            <h3>Command not responding?</h3>
+            <p>
+              Some commands are role-restricted. Ask your server admin to review channel overrides and permission
+              hierarchy.
+            </p>
+          </article>
+        </section>
+
+        <section className="docs-support-card">
+          <h2>Need More Help?</h2>
+          <p>Join support or check FAQs for troubleshooting examples and setup guides.</p>
+
+          <div className="docs-support-actions">
+            <a href={SITE_CONFIG.links.discord} target="_blank" rel="noreferrer" className="docs-cta-btn">
+              Join Support Server
+            </a>
+            <a href="/faq" className="docs-cta-btn docs-cta-outline">
+              View FAQ
+            </a>
+          </div>
+        </section>
+      </section>
+    </div>
   );
 }
 

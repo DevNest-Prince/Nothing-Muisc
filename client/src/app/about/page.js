@@ -1,5 +1,3 @@
-import SectionHeader from '@/components/SectionHeader';
-import Button from '@/components/Button';
 import { SITE_CONFIG } from '@/config/site';
 
 export const metadata = {
@@ -8,147 +6,128 @@ export const metadata = {
 };
 
 export default function AboutPage() {
+  const values = [
+    {
+      title: 'Simplicity',
+      description: 'Commands stay clear and predictable so every server member can use the bot in seconds.',
+    },
+    {
+      title: 'Community',
+      description: 'Product decisions are guided by user feedback, support discussions, and real server workflows.',
+    },
+    {
+      title: 'Reliability',
+      description: 'Playback quality and uptime are treated as core features, not optional upgrades.',
+    },
+  ];
+
+  const stats = [
+    { label: 'Active Users', value: '5M+' },
+    { label: 'Discord Servers', value: '50K+' },
+    { label: 'Songs Daily', value: '10M+' },
+    { label: 'Uptime Target', value: '99.9%' },
+  ];
+
+  const technologies = [
+    'Discord.js bot framework',
+    'Node.js backend services',
+    'PostgreSQL data storage',
+    'Redis cache layer',
+    'Docker container platform',
+    'Kubernetes orchestration',
+    'Next.js web experience',
+    'React UI components',
+  ];
+
   return (
-    <>
-      <section className="section gradient-bg container-main">
-        <SectionHeader title="About Nothing" subtitle="Our mission to enhance Discord music experience" />
-      </section>
-
-      <section className="section container-main max-w-4xl mx-auto">
-        {/* Mission */}
-        <div className="card mb-8">
-          <h2 className="mb-4">Our Mission</h2>
-          <p className="text-zinc-400 leading-relaxed">
-            Nothing was created with a simple mission: to provide Discord communities with the most intuitive,
-            powerful, and reliable music bot available. We believe that music is essential to community building, and
-            every Discord server deserves access to world-class music features without complexity or limitations.
-          </p>
-        </div>
-
-        {/* Story */}
-        <div className="card mb-8">
-          <h2 className="mb-4">Our Story</h2>
-          <p className="text-zinc-400 leading-relaxed mb-4">
-            Nothing was born from frustration. Our founder, a Discord server administrator, struggled to find a music
-            bot that was both powerful and easy to use. Existing solutions were either overly complicated or lacked
-            essential features. So in 2023, we decided to build something better.
-          </p>
-          <p className="text-zinc-400 leading-relaxed">
-            Today, Nothing serves over 1 million users across 50,000+ Discord servers, processing millions of songs
-            per day. We've stayed true to our original vision: creating a bot that just works, with intuitive commands
-            and rock-solid reliability.
-          </p>
-        </div>
-
-        {/* Values */}
-        <div className="mb-8">
-          <h2 className="mb-6">Our Values</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: ' Simplicity',
-                description:
-                  'We believe great software should be simple. Nothing is designed to be intuitive and easy to use.',
-              },
-              {
-                title: ' Community',
-                description:
-                  'Our users drive our development. We listen to feedback and continuously improve based on community needs.',
-              },
-              {
-                title: ' Reliability',
-                description: 'We maintain 99.9% uptime and constantly work to ensure Nothing is always there for you.',
-              },
-            ].map((value, idx) => (
-              <div key={idx} className="card">
-                <h3 className="mb-3">{value.title}</h3>
-                <p className="text-zinc-400">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Team */}
-        <div className="card mb-8">
-          <h2 className="mb-6">Our Team</h2>
-          <p className="text-zinc-400 mb-6">
-            Nothing is built by a passionate team of developers, designers, and music enthusiasts who believe in the
-            power of great software. We're based around the world and connected by our shared mission.
+    <div className="about-page">
+      <section className="about-hero container-main">
+        <div className="about-hero-panel animate-fade-in">
+          <span className="about-kicker">Who We Are</span>
+          <h1>About Nothing</h1>
+          <p>
+            We build music tools for Discord communities that want smooth playback, clean controls, and stable
+            performance every day.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { name: 'Developer & Founder', title: 'Full Stack Developer' },
-              { name: 'Community Manager', title: 'Community & Support' },
-              { name: 'Infrastructure', title: 'DevOps & Reliability' },
-              { name: 'Music Engineer', title: 'Audio & Streaming' },
-            ].map((member, idx) => (
-              <div key={idx} className="bg-zinc-900 rounded-lg p-4 border border-zinc-800">
-                <p className="font-bold text-orange-400">{member.name}</p>
-                <p className="text-sm text-zinc-400">{member.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* By the Numbers */}
-        <div className="mb-8">
-          <h2 className="mb-6">By The Numbers</h2>
-          <div className="grid md:grid-cols-4 gap-4">
-            {[
-              { label: 'Active Users', value: '1M+' },
-              { label: 'Discord Servers', value: '50K+' },
-              { label: 'Songs Played Daily', value: '10M+' },
-              { label: 'Uptime SLA', value: '99.9%' },
-            ].map((stat, idx) => (
-              <div key={idx} className="card text-center">
-                <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
-                <p className="text-zinc-400 text-sm">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tech Stack */}
-        <div className="card mb-8">
-          <h2 className="mb-4">Technology</h2>
-          <p className="text-zinc-400 mb-4">Nothing is built on modern, scalable technology:</p>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              'Discord.js for bot framework',
-              'Node.js for backend',
-              'PostgreSQL for data storage',
-              'Redis for caching',
-              'Docker for containerization',
-              'Kubernetes for orchestration',
-              'Next.js for web interface',
-              'React for UI components',
-            ].map((tech, idx) => (
-              <div key={idx} className="flex items-center gap-2 text-zinc-400">
-                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                {tech}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="card bg-gradient-to-r from-orange-500/20 to-amber-500/20 border-orange-500/50 text-center">
-          <h2 className="mb-4">Join Our Community</h2>
-          <p className="text-zinc-400 mb-6">
-            Be part of something special. Join thousands of successful Discord communities powered by Nothing.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href={SITE_CONFIG.bot.inviteUrl} target="_blank" variant="primary" size="lg">
-               Add to Discord
-            </Button>
-            <Button href={SITE_CONFIG.links.discord} target="_blank" variant="outline" size="lg">
-               Join Community
-            </Button>
+          <div className="about-hero-chips">
+            <span>Community First</span>
+            <span>Music Focused</span>
+            <span>Scale Ready</span>
           </div>
         </div>
       </section>
-    </>
+
+      <section className="container-main about-main">
+        <section className="about-grid-block animate-slide-in">
+          <article className="about-panel-card">
+            <h2>Our Mission</h2>
+            <p>
+              Nothing exists to make Discord music sessions simple, powerful, and enjoyable for every server size.
+              Great audio and intuitive controls should never be difficult to access.
+            </p>
+          </article>
+
+          <article className="about-panel-card">
+            <h2>Our Story</h2>
+            <p>
+              The project started when server admins could not find one bot that balanced features and usability. We
+              built Nothing to close that gap and deliver dependable playback with clear command design.
+            </p>
+          </article>
+        </section>
+
+        <section className="about-section-card">
+          <h2>Core Values</h2>
+          <div className="about-values-grid">
+            {values.map((value) => (
+              <article key={value.title} className="about-value-card">
+                <h3>{value.title}</h3>
+                <p>{value.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="about-section-card">
+          <h2>By the Numbers</h2>
+          <div className="about-stats-grid">
+            {stats.map((stat) => (
+              <article key={stat.label} className="about-stat-card">
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="about-section-card">
+          <h2>Technology Stack</h2>
+          <p className="about-muted">Built on scalable tools designed for low latency and stable voice sessions.</p>
+          <div className="about-tech-grid">
+            {technologies.map((item) => (
+              <div key={item} className="about-tech-item">
+                <span></span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="about-community-card">
+          <h2>Join Our Community</h2>
+          <p>Be part of growing Discord communities that run daily music sessions with Nothing.</p>
+          <div className="about-community-actions">
+            <a href={SITE_CONFIG.bot.inviteUrl} target="_blank" rel="noreferrer" className="about-cta-btn">
+              Add to Discord
+            </a>
+            <a href={SITE_CONFIG.links.discord} target="_blank" rel="noreferrer" className="about-cta-btn about-cta-outline">
+              Join Community
+            </a>
+          </div>
+        </section>
+      </section>
+    </div>
   );
 }
 

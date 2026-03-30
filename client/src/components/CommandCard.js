@@ -1,22 +1,33 @@
 'use client';
 
-export default function CommandCard({ command }) {
+export default function CommandCard({ command, index = 0 }) {
   return (
-    <div className="card group">
-      <div className="flex items-start justify-between mb-3">
-        <div>
-          <h4 className="font-bold text-lg text-orange-400">{command.name}</h4>
-          {command.aliases && command.aliases.length > 0 && (
-            <p className="text-xs text-zinc-500 mt-1">Aliases: {command.aliases.join(', ')}</p>
-          )}
+    <article className="command-card animate-fade-in" style={{ animationDelay: `${index * 60}ms` }}>
+      <div className="command-card-head">
+        <h3>
+          <span>{'>'}</span>
+          {command.name}
+        </h3>
+        <span className="command-card-category">{command.category}</span>
+      </div>
+
+      <p className="command-card-description">{command.description}</p>
+
+      {command.aliases && command.aliases.length > 0 && (
+        <div className="command-card-aliases">
+          {command.aliases.map((alias) => (
+            <span key={alias} className="command-alias-chip">
+              {alias}
+            </span>
+          ))}
         </div>
-        <span className="badge badge-primary text-xs">{command.category}</span>
+      )}
+
+      <div className="command-card-usage-wrap">
+        <span>Usage</span>
+        <code>{command.usage}</code>
       </div>
-      <p className="text-zinc-400 mb-3">{command.description}</p>
-      <div className="bg-zinc-950/50 rounded p-3 font-mono text-sm text-zinc-300">
-        {command.usage}
-      </div>
-    </div>
+    </article>
   );
 }
 
