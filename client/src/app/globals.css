@@ -921,6 +921,7 @@ input, textarea, select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.42rem;
   border-radius: 0.65rem;
   border: 1px solid rgba(251, 146, 60, 0.8);
   background: linear-gradient(90deg, #f97316 0%, #ea580c 100%);
@@ -951,6 +952,12 @@ input, textarea, select {
 .docs-panel-card h2,
 .docs-panel-card h3 {
   margin: 0;
+}
+
+.docs-panel-card h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
 }
 
 .docs-panel-card p {
@@ -1244,6 +1251,7 @@ input, textarea, select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   border-radius: 0.65rem;
   border: 1px solid rgba(251, 146, 60, 0.8);
   background: linear-gradient(90deg, #f97316 0%, #ea580c 100%);
@@ -1623,6 +1631,8 @@ input, textarea, select {
 .contact-info-card a {
   margin-top: 0.7rem;
   display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: #fb923c;
   font-weight: 600;
 }
@@ -1703,6 +1713,10 @@ input, textarea, select {
 .contact-submit-btn {
   width: 100%;
   margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
   border: 1px solid rgba(251, 146, 60, 0.82);
   border-radius: 0.7rem;
   background: linear-gradient(90deg, #f97316 0%, #ea580c 100%);
@@ -1746,6 +1760,10 @@ input, textarea, select {
 }
 
 .contact-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
   border: 1px solid rgba(82, 82, 91, 0.85);
   border-radius: 0.72rem;
   background: rgba(9, 9, 11, 0.72);

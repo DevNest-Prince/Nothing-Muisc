@@ -2,6 +2,7 @@
 
 import { SITE_CONFIG } from '@/config/site';
 import { useState } from 'react';
+import { FiBookOpen, FiExternalLink, FiGithub, FiHelpCircle, FiMail, FiMessageCircle, FiSend } from 'react-icons/fi';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ export default function ContactPage() {
       subtitle: 'Send questions any time',
       href: 'mailto:support@nothing-bot.com',
       label: 'support@nothing-bot.com',
+      icon: FiMail,
     },
     {
       title: 'Discord',
@@ -26,6 +28,7 @@ export default function ContactPage() {
       href: SITE_CONFIG.links.discord,
       label: 'Join Server',
       external: true,
+      icon: FiMessageCircle,
     },
     {
       title: 'GitHub',
@@ -33,6 +36,7 @@ export default function ContactPage() {
       href: SITE_CONFIG.links.github,
       label: 'View Repository',
       external: true,
+      icon: FiGithub,
     },
   ];
 
@@ -70,15 +74,20 @@ export default function ContactPage() {
 
       <section className="container-main contact-main">
         <div className="contact-card-grid animate-slide-in">
-          {contactCards.map((card) => (
+          {contactCards.map((card) => {
+            const Icon = card.icon;
+            return (
             <article key={card.title} className="contact-info-card">
               <h3>{card.title}</h3>
               <p>{card.subtitle}</p>
               <a href={card.href} target={card.external ? '_blank' : undefined} rel={card.external ? 'noreferrer' : undefined}>
+                <Icon aria-hidden="true" />
                 {card.label}
+                {card.external && <FiExternalLink aria-hidden="true" />}
               </a>
             </article>
-          ))}
+          );
+          })}
         </div>
 
         <section className="contact-form-shell">
@@ -143,6 +152,7 @@ export default function ContactPage() {
               </div>
 
               <button type="submit" className="contact-submit-btn">
+                <FiSend aria-hidden="true" />
                 Send Message
               </button>
             </form>
@@ -155,10 +165,10 @@ export default function ContactPage() {
           <h2>Other Ways to Connect</h2>
           <p>Browse docs, open issues, or chat with the community.</p>
           <div className="contact-links-grid">
-            <a href="/docs" className="contact-link-btn">Read Documentation</a>
-            <a href="/faq" className="contact-link-btn">View FAQ</a>
-            <a href={SITE_CONFIG.links.github} target="_blank" rel="noreferrer" className="contact-link-btn">GitHub Issues</a>
-            <a href={SITE_CONFIG.links.discord} target="_blank" rel="noreferrer" className="contact-link-btn">Discord Server</a>
+            <a href="/docs" className="contact-link-btn"><FiBookOpen aria-hidden="true" /> Read Documentation</a>
+            <a href="/faq" className="contact-link-btn"><FiHelpCircle aria-hidden="true" /> View FAQ</a>
+            <a href={SITE_CONFIG.links.github} target="_blank" rel="noreferrer" className="contact-link-btn"><FiGithub aria-hidden="true" /> GitHub Issues</a>
+            <a href={SITE_CONFIG.links.discord} target="_blank" rel="noreferrer" className="contact-link-btn"><FiMessageCircle aria-hidden="true" /> Discord Server</a>
           </div>
         </div>
       </section>

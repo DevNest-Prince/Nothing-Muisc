@@ -1,5 +1,6 @@
 import FAQItem from '@/components/FAQItem';
 import { FAQ_ITEMS, SITE_CONFIG } from '@/config/site';
+import { FiArrowRight, FiHelpCircle, FiMessageCircle } from 'react-icons/fi';
 
 export const metadata = {
   title: 'FAQ - ' + SITE_CONFIG.name,
@@ -47,9 +48,12 @@ export default function FAQPage() {
 
           <div className="faq-support-actions">
             <a href="/contact" className="faq-cta-btn">
+              <FiHelpCircle aria-hidden="true" />
               Contact Support
+              <FiArrowRight aria-hidden="true" />
             </a>
             <a href={SITE_CONFIG.links.discord} target="_blank" rel="noreferrer" className="faq-cta-btn faq-cta-outline">
+              <FiMessageCircle aria-hidden="true" />
               Join Discord
             </a>
           </div>
