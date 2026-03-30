@@ -38,8 +38,11 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex items-center gap-2">
-            <Link href={SITE_CONFIG.bot.inviteUrl} target="_blank" className="navbar-btn navbar-btn-light">
-              Invite Bot
+            <Link href={SITE_CONFIG.bot.inviteUrl} target="_blank" className="navbar-btn navbar-btn-invite">
+              <span>Invite Bot</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M7 17L17 7M17 7H8M17 7V16"></path>
+              </svg>
             </Link>
           </div>
 
@@ -85,9 +88,12 @@ export default function Header() {
                 <Link
                   href={SITE_CONFIG.bot.inviteUrl}
                   target="_blank"
-                  className="navbar-btn navbar-btn-light justify-center w-full"
+                  className="navbar-btn navbar-btn-invite justify-center w-full"
                 >
-                  Invite Bot
+                  <span>Invite Bot</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H8M17 7V16"></path>
+                  </svg>
                 </Link>
               </div>
             </div>
