@@ -222,8 +222,19 @@ export default function Home() {
                 Invite Bot
                 <FiArrowRight />
               </Link>
-              <Link href="/commands" className="home-secondary-btn">
+              <Link
+                href={SITE_CONFIG.links.discord}
+                target="_blank"
+                rel="noreferrer"
+                className="home-secondary-btn home-discord-btn"
+              >
+                <FiUsers />
+                Join Discord Community
+              </Link>
+              <Link href="/commands" className="home-secondary-btn home-commands-btn">
+                <FiList />
                 Explore Commands
+                <FiArrowRight />
               </Link>
             </div>
 
