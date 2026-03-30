@@ -11,6 +11,10 @@ import {
   FiZap,
   FiRadio,
   FiCheckCircle,
+  FiHeadphones,
+  FiShield,
+  FiCpu,
+  FiArrowRight,
 } from 'react-icons/fi';
 
 export const metadata = {
@@ -18,11 +22,23 @@ export const metadata = {
   description: 'Discover all the amazing features of Nothing Discord music bot',
 };
 
+const TOP_BADGES = [
+  { icon: FiHeadphones, label: 'Studio-grade Playback' },
+  { icon: FiShield, label: 'Reliable and Safe Sessions' },
+  { icon: FiCpu, label: 'Fast Command Response' },
+];
+
+const FEATURE_STATS = [
+  { label: 'Daily Listeners', value: '5M+' },
+  { label: 'Server Sessions', value: '50K+' },
+  { label: 'Playback Uptime', value: '99.9%' },
+];
+
 const MUSIC_FEATURES = [
   {
     icon: FiMusic,
-    title: 'HIGH QUALITY AUDIO',
-    summary: 'Crisp playback built for Discord voice channels with stable performance.',
+    title: 'High Quality Audio',
+    summary: 'Crisp playback built for Discord voice channels with stable performance and cleaner output.',
     points: [
       '320kbps streaming support',
       'Low-latency voice delivery',
@@ -32,7 +48,7 @@ const MUSIC_FEATURES = [
   },
   {
     icon: FiList,
-    title: 'SMART QUEUE SYSTEM',
+    title: 'Smart Queue System',
     summary: 'Control what plays next with powerful queue and party-friendly controls.',
     points: [
       'Queue, skip, and jump controls',
@@ -43,7 +59,7 @@ const MUSIC_FEATURES = [
   },
   {
     icon: FiRadio,
-    title: 'PLAYLIST MANAGEMENT',
+    title: 'Playlist Management',
     summary: 'Save your best mixes and reuse them in seconds across servers.',
     points: [
       'Create unlimited playlists',
@@ -54,7 +70,7 @@ const MUSIC_FEATURES = [
   },
   {
     icon: FiSearch,
-    title: 'MUSIC SEARCH',
+    title: 'Music Search',
     summary: 'Find tracks quickly from multiple sources without leaving Discord.',
     points: [
       'Keyword and URL search',
@@ -65,7 +81,7 @@ const MUSIC_FEATURES = [
   },
   {
     icon: FiSliders,
-    title: 'AUDIO FILTERS',
+    title: 'Audio Filters',
     summary: 'Customize the listening vibe with real-time sound effects.',
     points: [
       'Bass boost and nightcore',
@@ -76,7 +92,7 @@ const MUSIC_FEATURES = [
   },
   {
     icon: FiClock,
-    title: '24/7 MUSIC MODE',
+    title: '24/7 Music Mode',
     summary: 'Keep your station online all day with stable long-session playback.',
     points: [
       'Non-stop radio mode',
@@ -87,7 +103,7 @@ const MUSIC_FEATURES = [
   },
   {
     icon: FiMic,
-    title: 'LYRICS AND KARAOKE',
+    title: 'Lyrics and Karaoke',
     summary: 'Show synchronized lyrics so members can sing along in real time.',
     points: [
       'Instant lyrics lookup',
@@ -98,7 +114,7 @@ const MUSIC_FEATURES = [
   },
   {
     icon: FiUsers,
-    title: 'SERVER TOOLS',
+    title: 'Server Tools',
     summary: 'Music-focused utility commands for smoother server sessions.',
     points: [
       'Now playing rich embed',
@@ -109,7 +125,7 @@ const MUSIC_FEATURES = [
   },
   {
     icon: FiZap,
-    title: 'FAST PERFORMANCE',
+    title: 'Fast Performance',
     summary: 'Built for speed so commands respond quickly even in busy servers.',
     points: [
       'Low command latency',
@@ -122,56 +138,83 @@ const MUSIC_FEATURES = [
 
 export default function FeaturesPage() {
   return (
-    <>
-      <section className="section section-alt container-main mt-10 md:mt-14 pt-32 md:pt-36">
-        <div className="text-center mb-12">
-          <p className="text-orange-400 uppercase tracking-[0.2em] text-xs md:text-sm font-semibold mb-4">
-            Powerful Music Capabilities
+    <main className="features-page">
+      <section className="container-main features-hero">
+        <div className="features-hero-panel">
+          <span className="features-kicker">Powerful Music Capabilities</span>
+          <h1 className="features-title">Everything Your Discord Server Needs For Premium Music</h1>
+          <p className="features-subtitle">
+            Nothing gives your community a complete music stack: high-quality playback, smart controls,
+            seamless playlists, and reliable performance at scale.
           </p>
-          <h1 className="mb-4 leading-tight">Advanced Music Features For Your Server</h1>
-          <p className="text-zinc-400 max-w-3xl mx-auto text-base md:text-lg">
-            Nothing gives your Discord community everything needed to play, control, and enjoy music without friction.
-          </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="features-badge-row">
+            {TOP_BADGES.map((badge) => {
+              const Icon = badge.icon;
+              return (
+                <div key={badge.label} className="features-badge-chip">
+                  <span className="features-badge-icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span>{badge.label}</span>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="features-stats-grid">
+            {FEATURE_STATS.map((stat) => (
+              <article key={stat.label} className="features-stat-card">
+                <p className="features-stat-value">{stat.value}</p>
+                <p className="features-stat-label">{stat.label}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-main features-grid-wrap">
+        <div className="features-grid">
           {MUSIC_FEATURES.map((feature) => {
             const Icon = feature.icon;
 
             return (
-            <div key={feature.title} className="card">
-              <div className="w-9 h-9 rounded-md border border-orange-400/40 bg-orange-500/10 flex items-center justify-center text-orange-300 text-base mb-4">
-                <Icon />
-              </div>
+              <article key={feature.title} className="features-card">
+                <div className="features-card-icon" aria-hidden="true">
+                  <Icon />
+                </div>
 
-              <h3 className="mb-3 text-xl md:text-2xl">{feature.title}</h3>
-              <p className="text-zinc-400 mb-4">{feature.summary}</p>
+                <h2 className="features-card-title">{feature.title}</h2>
+                <p className="features-card-summary">{feature.summary}</p>
 
-              <ul className="space-y-2">
-                {feature.points.map((point) => (
-                  <li key={point} className="text-zinc-300 text-sm flex items-start gap-2">
-                    <FiCheckCircle className="text-orange-400 mt-0.5 shrink-0" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul className="features-points-list">
+                  {feature.points.map((point) => (
+                    <li key={point}>
+                      <FiCheckCircle className="features-point-check" aria-hidden="true" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
             );
           })}
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section container-main text-center">
-        <h2 className="mb-6">Ready To Power Your Music Server?</h2>
-        <p className="text-lg text-zinc-300 mb-8 max-w-2xl mx-auto">
-          Add Nothing now and unlock a clean, fast, and premium Discord music experience for your community.
-        </p>
-        <Button href={SITE_CONFIG.bot.inviteUrl} variant="primary" size="lg">
-          Add to Discord
-        </Button>
+      <section className="container-main features-cta-wrap">
+        <div className="features-cta-panel">
+          <h2 className="features-cta-title">Ready To Upgrade Your Server Music Experience?</h2>
+          <p className="features-cta-text">
+            Launch Nothing in your server and instantly unlock smooth playback, queue tools,
+            playlists, filters, and smart music controls.
+          </p>
+          <Button href={SITE_CONFIG.bot.inviteUrl} variant="primary" size="lg" className="features-cta-btn">
+            Invite Nothing
+            <FiArrowRight />
+          </Button>
+        </div>
       </section>
-    </>
+    </main>
   );
 }
 
