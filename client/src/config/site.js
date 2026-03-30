@@ -13,6 +13,7 @@ export const SITE_CONFIG = {
     support: 'https://support.nothing-bot.com',
     docs: '/docs',
     api: 'https://api.nothing-bot.com',
+    hostingPartner: 'https://glacierhosting.in/',
   },
   
   // Bot settings
