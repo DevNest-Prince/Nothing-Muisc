@@ -4,6 +4,21 @@ import Link from 'next/link';
 import { SITE_CONFIG } from '@/config/site';
 import { getCurrentYear } from '@/utils/helpers';
 import { useState } from 'react';
+import {
+  FiActivity,
+  FiBookOpen,
+  FiCode,
+  FiCommand,
+  FiDisc,
+  FiExternalLink,
+  FiFileText,
+  FiGithub,
+  FiHelpCircle,
+  FiInfo,
+  FiMessageCircle,
+  FiPhone,
+  FiUsers,
+} from 'react-icons/fi';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -95,21 +110,25 @@ export default function Footer() {
             <ul className="footer-links">
               <li>
                 <Link href="/features" className="footer-link">
+                  <FiDisc aria-hidden="true" />
                   Features
                 </Link>
               </li>
               <li>
                 <Link href="/commands" className="footer-link">
+                  <FiCommand aria-hidden="true" />
                   Commands
                 </Link>
               </li>
               <li>
                 <Link href="/docs" className="footer-link">
+                  <FiBookOpen aria-hidden="true" />
                   Documentation
                 </Link>
               </li>
               <li>
                 <Link href="/faq" className="footer-link">
+                  <FiHelpCircle aria-hidden="true" />
                   FAQ
                 </Link>
               </li>
@@ -122,22 +141,28 @@ export default function Footer() {
             <ul className="footer-links">
               <li>
                 <Link href="/about" className="footer-link">
+                  <FiInfo aria-hidden="true" />
                   About Us
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="footer-link">
+                  <FiPhone aria-hidden="true" />
                   Contact
                 </Link>
               </li>
               <li>
                 <Link href={SITE_CONFIG.links.github} target="_blank" className="footer-link">
+                  <FiGithub aria-hidden="true" />
                   GitHub
+                  <FiExternalLink aria-hidden="true" />
                 </Link>
               </li>
               <li>
                 <Link href={SITE_CONFIG.links.api} target="_blank" className="footer-link">
+                  <FiCode aria-hidden="true" />
                   API
+                  <FiExternalLink aria-hidden="true" />
                 </Link>
               </li>
             </ul>
@@ -149,22 +174,30 @@ export default function Footer() {
             <ul className="footer-links">
               <li>
                 <Link href={SITE_CONFIG.links.discord} target="_blank" className="footer-link">
+                  <FiMessageCircle aria-hidden="true" />
                   Discord Server
+                  <FiExternalLink aria-hidden="true" />
                 </Link>
               </li>
               <li>
                 <Link href={SITE_CONFIG.links.support} target="_blank" className="footer-link">
+                  <FiUsers aria-hidden="true" />
                   Support
+                  <FiExternalLink aria-hidden="true" />
                 </Link>
               </li>
               <li>
                 <a href="https://twitter.com/nothingbot" target="_blank" className="footer-link">
+                  <FiActivity aria-hidden="true" />
                   Twitter
+                  <FiExternalLink aria-hidden="true" />
                 </a>
               </li>
               <li>
                 <a href="https://youtube.com" target="_blank" className="footer-link">
+                  <FiFileText aria-hidden="true" />
                   YouTube
+                  <FiExternalLink aria-hidden="true" />
                 </a>
               </li>
             </ul>

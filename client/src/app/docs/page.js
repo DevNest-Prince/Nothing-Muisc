@@ -1,4 +1,5 @@
 import { SITE_CONFIG } from '@/config/site';
+import { FiArrowRight, FiHelpCircle, FiMessageCircle, FiSettings, FiShield } from 'react-icons/fi';
 
 export const metadata = {
   title: 'Documentation - ' + SITE_CONFIG.name,
@@ -54,7 +55,7 @@ export default function DocsPage() {
       <section className="container-main docs-main">
         <section className="docs-block docs-intro-block animate-slide-in">
           <div>
-            <h2>Quick Start</h2>
+            <h2><FiSettings aria-hidden="true" /> Quick Start</h2>
             <p>
               Follow these three steps to get music running in less than two minutes. Use the default prefix{' '}
               <code>{SITE_CONFIG.bot.prefix}</code> unless your server has a custom setup.
@@ -72,6 +73,7 @@ export default function DocsPage() {
 
                 {item.action && (
                   <a href={item.action.href} target="_blank" rel="noreferrer" className="docs-cta-btn">
+                    <FiArrowRight aria-hidden="true" />
                     {item.action.label}
                   </a>
                 )}
@@ -82,7 +84,7 @@ export default function DocsPage() {
 
         <section className="docs-grid-block">
           <article className="docs-panel-card">
-            <h2>Server Configuration</h2>
+            <h2><FiSettings aria-hidden="true" /> Server Configuration</h2>
             <p>
               Admins can customize prefix behavior, command scope, and moderation-friendly playback controls.
             </p>
@@ -96,7 +98,7 @@ export default function DocsPage() {
           </article>
 
           <article className="docs-panel-card">
-            <h2>Required Permissions</h2>
+            <h2><FiShield aria-hidden="true" /> Required Permissions</h2>
             <p>Make sure these permissions are enabled for smooth playback and command responses.</p>
             <ul className="docs-permission-list">
               {permissionList.map((permission) => (
@@ -149,9 +151,11 @@ export default function DocsPage() {
 
           <div className="docs-support-actions">
             <a href={SITE_CONFIG.links.discord} target="_blank" rel="noreferrer" className="docs-cta-btn">
+              <FiMessageCircle aria-hidden="true" />
               Join Support Server
             </a>
             <a href="/faq" className="docs-cta-btn docs-cta-outline">
+              <FiHelpCircle aria-hidden="true" />
               View FAQ
             </a>
           </div>
