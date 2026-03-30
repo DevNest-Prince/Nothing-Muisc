@@ -1798,7 +1798,6 @@ input, textarea, select {
 /* ===== Premium Footer Redesign ===== */
 .footer-container {
   position: relative;
-  margin-top: clamp(5rem, 10vw, 8rem);
   background:
     radial-gradient(circle at 10% 5%, rgba(249, 115, 22, 0.15), transparent 35%),
     radial-gradient(circle at 90% 12%, rgba(245, 158, 11, 0.1), transparent 40%),
