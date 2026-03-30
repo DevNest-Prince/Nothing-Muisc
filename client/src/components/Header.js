@@ -41,9 +41,6 @@ export default function Header() {
             <Link href={SITE_CONFIG.bot.inviteUrl} target="_blank" className="navbar-btn navbar-btn-light">
               Invite Bot
             </Link>
-            <Link href="/contact" className="navbar-btn navbar-btn-red">
-              Login
-            </Link>
           </div>
 
           <button
@@ -84,16 +81,13 @@ export default function Header() {
                   </Link>
                 );
               })}
-              <div className="grid grid-cols-2 gap-2 mt-2">
+              <div className="mt-2">
                 <Link
                   href={SITE_CONFIG.bot.inviteUrl}
                   target="_blank"
-                  className="navbar-btn navbar-btn-light justify-center"
+                  className="navbar-btn navbar-btn-light justify-center w-full"
                 >
-                  Invite
-                </Link>
-                <Link href="/contact" className="navbar-btn navbar-btn-red justify-center">
-                  Login
+                  Invite Bot
                 </Link>
               </div>
             </div>
