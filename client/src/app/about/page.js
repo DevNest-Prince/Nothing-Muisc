@@ -118,7 +118,7 @@ export default function AboutPage() {
           <h2>Join Our Community</h2>
           <p>Be part of growing Discord communities that run daily music sessions with Nothing.</p>
           <div className="about-community-actions">
-            <a href={SITE_CONFIG.bot.inviteUrl} target="_blank" rel="noreferrer" className="about-cta-btn">
+            <a href="/bots" className="about-cta-btn">
               Add to Discord
             </a>
             <a href={SITE_CONFIG.links.discord} target="_blank" rel="noreferrer" className="about-cta-btn about-cta-outline">
