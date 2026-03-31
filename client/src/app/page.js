@@ -22,7 +22,7 @@ import { GiGuitar, GiViolin } from 'react-icons/gi';
 
 const HERO_STATS = [
   { value: '50 Lakh+', label: 'Total Users' },
-  { value: '200+', label: 'Active Servers' },
+  { value: '4500+', label: 'Active Servers' },
   { value: '99.4%', label: 'Uptime' },
   { value: '85ms', label: 'Avg Ping' },
 ];
@@ -85,7 +85,7 @@ const LIVE_PLAYLIST = [
 
 const IMPACT_STATS = [
   { value: '50 Lakh+', label: 'Total Users', icon: FiUsers },
-  { value: '200+', label: 'Active Servers', icon: FiServer },
+  { value: '4500+', label: 'Active Servers', icon: FiServer },
   { value: '99.4%', label: 'Uptime', icon: FiCheckCircle },
   { value: '85ms', label: 'Avg Ping', icon: FiActivity },
 ];
