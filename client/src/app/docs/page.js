@@ -108,7 +108,7 @@ export default function DocsPage() {
           </article>
         </section>
 
-        <section className="docs-grid-block docs-feature-grid">
+        <section className="docs-grid-block">
           <article className="docs-panel-card">
             <h3>Playlist Workflow</h3>
             <p>Build playlists, save queue states, and share sets across your community channels.</p>
@@ -121,11 +121,6 @@ export default function DocsPage() {
             <code>!queue | !move 3 1 | !remove 2</code>
           </article>
 
-          <article className="docs-panel-card">
-            <h3>AI Recommendations</h3>
-            <p>Discover matching tracks based on current listening and server activity patterns.</p>
-            <code>!recommend</code>
-          </article>
         </section>
 
         <section className="docs-grid-block">

@@ -10,8 +10,8 @@ export const SITE_CONFIG = {
   
   // URLs
   links: {
-    github: 'https://github.com/yourusername/nothing-bot',
-    discord: 'https://discord.gg/BUgMbcGXGP',
+    github: 'https://github.com/Ankush26030',
+    discord: 'https://discord.gg/w77ymEU82a',
     support: 'https://support.nothing-bot.com',
     docs: '/docs',
     api: 'https://api.nothing-bot.com',
