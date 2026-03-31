@@ -208,7 +208,7 @@ export default function FeaturesPage() {
             Launch Nothing in your server and instantly unlock smooth playback, queue tools,
             playlists, filters, and smart music controls.
           </p>
-          <Button href={SITE_CONFIG.bot.inviteUrl} variant="primary" size="lg" className="features-cta-btn">
+          <Button href="/bots" variant="primary" size="lg" className="features-cta-btn">
             Invite Nothing
             <FiArrowRight />
           </Button>
