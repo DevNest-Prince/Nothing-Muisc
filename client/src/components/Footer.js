@@ -5,19 +5,15 @@ import { SITE_CONFIG } from '@/config/site';
 import { getCurrentYear } from '@/utils/helpers';
 import { useState } from 'react';
 import {
-  FiActivity,
   FiBookOpen,
-  FiCode,
   FiCommand,
   FiDisc,
   FiExternalLink,
-  FiFileText,
   FiGithub,
   FiHelpCircle,
   FiInfo,
   FiMessageCircle,
   FiPhone,
-  FiUsers,
 } from 'react-icons/fi';
 
 export default function Footer() {
@@ -161,13 +157,6 @@ export default function Footer() {
                   <FiExternalLink aria-hidden="true" />
                 </Link>
               </li>
-              <li>
-                <Link href={SITE_CONFIG.links.api} target="_blank" className="footer-link">
-                  <FiCode aria-hidden="true" />
-                  API
-                  <FiExternalLink aria-hidden="true" />
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -181,27 +170,6 @@ export default function Footer() {
                   Discord Server
                   <FiExternalLink aria-hidden="true" />
                 </Link>
-              </li>
-              <li>
-                <Link href={SITE_CONFIG.links.support} target="_blank" className="footer-link">
-                  <FiUsers aria-hidden="true" />
-                  Support
-                  <FiExternalLink aria-hidden="true" />
-                </Link>
-              </li>
-              <li>
-                <a href="https://twitter.com/nothingbot" target="_blank" className="footer-link">
-                  <FiActivity aria-hidden="true" />
-                  Twitter
-                  <FiExternalLink aria-hidden="true" />
-                </a>
-              </li>
-              <li>
-                <a href="https://youtube.com" target="_blank" className="footer-link">
-                  <FiFileText aria-hidden="true" />
-                  YouTube
-                  <FiExternalLink aria-hidden="true" />
-                </a>
               </li>
             </ul>
           </div>
