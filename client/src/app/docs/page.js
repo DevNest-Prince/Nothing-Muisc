@@ -15,7 +15,7 @@ export default function DocsPage() {
         'Add Nothing to your Discord server with the required permissions and complete the OAuth prompt.',
       action: {
         label: 'Add to Discord',
-        href: SITE_CONFIG.bot.inviteUrl,
+        href: '/bots',
       },
     },
     {
@@ -72,7 +72,7 @@ export default function DocsPage() {
                 {item.code && <code>{item.code}</code>}
 
                 {item.action && (
-                  <a href={item.action.href} target="_blank" rel="noreferrer" className="docs-cta-btn">
+                  <a href={item.action.href} className="docs-cta-btn">
                     <FiArrowRight aria-hidden="true" />
                     {item.action.label}
                   </a>
