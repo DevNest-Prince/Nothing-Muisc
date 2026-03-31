@@ -2,11 +2,23 @@
 
 import { COMMANDS, SITE_CONFIG } from '@/config/site';
 import CommandCard from '@/components/CommandCard';
-import { useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function CommandsPage() {
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    if (!SITE_CONFIG.features.showCommandsPage) {
+      router.replace('/');
+    }
+  }, [router]);
+
+  if (!SITE_CONFIG.features.showCommandsPage) {
+    return null;
+  }
 
   const categories = ['All', ...new Set(COMMANDS.map((cmd) => cmd.category))];
 
@@ -133,4 +145,3 @@ export default function CommandsPage() {
     </div>
   );
 }
-

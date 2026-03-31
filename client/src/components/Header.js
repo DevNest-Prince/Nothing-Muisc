@@ -1,13 +1,20 @@
 'use client';
 
 import Link from 'next/link';
-import { SITE_CONFIG } from '@/config/site';
+import { DISCORD_BOTS, SITE_CONFIG } from '@/config/site';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const botLogos = {
+    'Nothing Music': '/Nothing%201%20logo.png',
+    'Nothing Canary': '/Nothing%20Canary%20logo.png',
+    'Nothing Prime': '/Nothing%20Prime%20logo.webp',
+    'Flame': '/Flame%20logo.png',
+  };
 
   return (
     <header className="sticky top-0 z-50 pt-2 md:pt-3">
@@ -38,12 +45,32 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex items-center gap-2">
-            <Link href={SITE_CONFIG.bot.inviteUrl} target="_blank" className="navbar-btn navbar-btn-invite">
-              <span>Invite Bot</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M7 17L17 7M17 7H8M17 7V16"></path>
-              </svg>
-            </Link>
+            <div className="navbar-invite-dropdown" suppressHydrationWarning>
+              <button type="button" className="navbar-btn navbar-btn-invite" aria-label="Open bot invite options">
+                <span>Invite Bot</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M6 9L12 15L18 9"></path>
+                </svg>
+              </button>
+
+              <div className="navbar-invite-menu" suppressHydrationWarning>
+                {DISCORD_BOTS.map((bot) => (
+                  <a
+                    key={bot.id}
+                    href={bot.inviteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="navbar-invite-item"
+                  >
+                    <span className="navbar-invite-bot">
+                      <img src={botLogos[bot.name]} alt="" className="navbar-invite-bot-logo" aria-hidden="true" />
+                      <strong>{bot.name}</strong>
+                    </span>
+                    <span>{bot.type}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           <button
@@ -85,16 +112,25 @@ export default function Header() {
                 );
               })}
               <div className="mt-2">
-                <Link
-                  href={SITE_CONFIG.bot.inviteUrl}
-                  target="_blank"
-                  className="navbar-btn navbar-btn-invite justify-center w-full"
-                >
-                  <span>Invite Bot</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <path d="M7 17L17 7M17 7H8M17 7V16"></path>
-                  </svg>
-                </Link>
+                <div className="navbar-mobile-invite-list" suppressHydrationWarning>
+                  <span className="navbar-mobile-invite-label">Invite A Bot</span>
+                  {DISCORD_BOTS.map((bot) => (
+                    <a
+                      key={bot.id}
+                      href={bot.inviteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="navbar-mobile-invite-item"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="navbar-mobile-invite-bot">
+                        <img src={botLogos[bot.name]} alt="" className="navbar-mobile-invite-bot-logo" aria-hidden="true" />
+                        <strong>{bot.name}</strong>
+                      </span>
+                      <span>{bot.type}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

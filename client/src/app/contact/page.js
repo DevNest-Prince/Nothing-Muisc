@@ -18,8 +18,8 @@ export default function ContactPage() {
     {
       title: 'Email',
       subtitle: 'Send questions any time',
-      href: 'mailto:support@nothing-bot.com',
-      label: 'support@nothing-bot.com',
+      href: 'mailto:contact.nothingbot@gmail.com',
+      label: 'contact.nothingbot@gmail.com',
       icon: FiMail,
     },
     {

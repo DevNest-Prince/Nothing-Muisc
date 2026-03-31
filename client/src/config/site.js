@@ -1,4 +1,6 @@
 // Site configuration - centralized constants
+const SHOW_COMMANDS_PAGE = false;
+
 export const SITE_CONFIG = {
   name: 'Nothing',
   title: 'Nothing - Discord Music Bot',
@@ -21,12 +23,18 @@ export const SITE_CONFIG = {
     prefix: '!',
     inviteUrl: 'https://discord.com/oauth2/authorize?client_id=1234592539324059709&permissions=414530792793&integration_type=0&scope=bot+applications.commands',
   },
+
+  // Feature flags
+  features: {
+    showCommandsPage: SHOW_COMMANDS_PAGE,
+  },
   
   // Navigation
   navigation: [
     { label: 'Home', href: '/' },
     { label: 'Features', href: '/features' },
-    { label: 'Commands', href: '/commands' },
+    ...(SHOW_COMMANDS_PAGE ? [{ label: 'Commands', href: '/commands' }] : []),
+    { label: 'Bots', href: '/bots' },
     { label: 'Docs', href: '/docs' },
     { label: 'FAQ', href: '/faq' },
     { label: 'About', href: '/about' },
@@ -145,6 +153,42 @@ export const COMMANDS = [
     category: 'Information',
     description: 'Get lyrics for the current song',
     usage: '!lyrics',
+  },
+];
+
+// Discord Bots data
+export const DISCORD_BOTS = [
+  {
+    id: 1,
+    name: 'Nothing Music',
+    type: 'Free',
+    description: 'Free music bot with crystal clear audio, smart playlist management, and extensive music source support. Perfect for servers looking for a reliable music experience.',
+    features: ['Music Streaming', 'Playlist Management', 'High-quality Audio', 'Multiple Sources'],
+    inviteUrl: 'https://discord.com/oauth2/authorize?client_id=1234592539324059709&permissions=414530792793&integration_type=0&scope=bot+applications.commands',
+  },
+  {
+    id: 2,
+    name: 'Nothing Canary',
+    type: 'Free + Premium',
+    description: 'Hybrid music bot offering both free and premium features. Canary is our testing ground for new features and improvements before they go live.',
+    features: ['Music Streaming', 'Beta Features', 'Premium Options', 'Early Access'],
+    inviteUrl: 'https://discord.com/oauth2/authorize?client_id=1131938711639183363&permissions=414530792793&integration_type=0&scope=bot+applications.commands',
+  },
+  {
+    id: 3,
+    name: 'Nothing Prime',
+    type: 'Premium',
+    description: 'Premium music bot with advanced features, priority support, and exclusive functionality. Get the ultimate music experience with enhanced capabilities.',
+    features: ['Premium Audio', 'Priority Support', 'Advanced Playlists', 'No Limits'],
+    inviteUrl: 'https://discord.com/oauth2/authorize?client_id=1254639840213991537&permissions=414530792793&integration_type=0&scope=bot+applications.commands',
+  },
+  {
+    id: 4,
+    name: 'Flame',
+    type: 'All-in-One',
+    description: 'Ultimate all-in-one security and moderation bot. Features the fastest antinuke protection, comprehensive security measures, and powerful moderation tools for your server.',
+    features: ['Antinuke Protection', 'Security Suite', 'Moderation Tools', 'Fast Responses'],
+    inviteUrl: 'https://discord.com/oauth2/authorize?client_id=1259218811131793479&permissions=414530792793&integration_type=0&scope=bot+applications.commands',
   },
 ];
 
