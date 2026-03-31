@@ -24,7 +24,7 @@ const HERO_STATS = [
   { value: '50 Lakh+', label: 'Total Users' },
   { value: '4500+', label: 'Active Servers' },
   { value: '99.4%', label: 'Uptime' },
-  { value: '85ms', label: 'Avg Ping' },
+  { value: '30ms', label: 'Avg Ping' },
 ];
 
 const HERO_HIGHLIGHTS = [
@@ -87,7 +87,7 @@ const IMPACT_STATS = [
   { value: '50 Lakh+', label: 'Total Users', icon: FiUsers },
   { value: '4500+', label: 'Active Servers', icon: FiServer },
   { value: '99.4%', label: 'Uptime', icon: FiCheckCircle },
-  { value: '85ms', label: 'Avg Ping', icon: FiActivity },
+  { value: '30ms', label: 'Avg Ping', icon: FiActivity },
 ];
 
 const WHY_CHOOSE_US = [
