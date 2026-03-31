@@ -1,3 +1,5 @@
+import { SITE_CONFIG } from '@/config/site';
+
 export default function sitemap() {
   const baseUrl = 'https://nothing-bot.com';
 
@@ -14,12 +16,16 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/commands`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
+    ...(SITE_CONFIG.features.showCommandsPage
+      ? [
+          {
+            url: `${baseUrl}/commands`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+          },
+        ]
+      : []),
     {
       url: `${baseUrl}/docs`,
       lastModified: new Date(),

@@ -231,11 +231,13 @@ export default function Home() {
                 <FiUsers />
                 Join Discord Community
               </Link>
-              <Link href="/commands" className="home-secondary-btn home-commands-btn">
-                <FiList />
-                Explore Commands
-                <FiArrowRight />
-              </Link>
+              {SITE_CONFIG.features.showCommandsPage && (
+                <Link href="/commands" className="home-secondary-btn home-commands-btn">
+                  <FiList />
+                  Explore Commands
+                  <FiArrowRight />
+                </Link>
+              )}
             </div>
 
             <div className="home-hero-stats">

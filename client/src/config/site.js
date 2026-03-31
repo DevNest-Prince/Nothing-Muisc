@@ -1,4 +1,6 @@
 // Site configuration - centralized constants
+const SHOW_COMMANDS_PAGE = false;
+
 export const SITE_CONFIG = {
   name: 'Nothing',
   title: 'Nothing - Discord Music Bot',
@@ -21,12 +23,17 @@ export const SITE_CONFIG = {
     prefix: '!',
     inviteUrl: 'https://discord.com/oauth2/authorize?client_id=1234592539324059709&permissions=414530792793&integration_type=0&scope=bot+applications.commands',
   },
+
+  // Feature flags
+  features: {
+    showCommandsPage: SHOW_COMMANDS_PAGE,
+  },
   
   // Navigation
   navigation: [
     { label: 'Home', href: '/' },
     { label: 'Features', href: '/features' },
-    { label: 'Commands', href: '/commands' },
+    ...(SHOW_COMMANDS_PAGE ? [{ label: 'Commands', href: '/commands' }] : []),
     { label: 'Bots', href: '/bots' },
     { label: 'Docs', href: '/docs' },
     { label: 'FAQ', href: '/faq' },

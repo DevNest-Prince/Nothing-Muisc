@@ -115,12 +115,14 @@ export default function Footer() {
                   Features
                 </Link>
               </li>
-              <li>
-                <Link href="/commands" className="footer-link">
-                  <FiCommand aria-hidden="true" />
-                  Commands
-                </Link>
-              </li>
+              {SITE_CONFIG.features.showCommandsPage && (
+                <li>
+                  <Link href="/commands" className="footer-link">
+                    <FiCommand aria-hidden="true" />
+                    Commands
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link href="/docs" className="footer-link">
                   <FiBookOpen aria-hidden="true" />
