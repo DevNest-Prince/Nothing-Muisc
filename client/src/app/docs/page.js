@@ -1,10 +1,12 @@
+import { generateMetadata } from '@/config/metadata';
 import { SITE_CONFIG } from '@/config/site';
 import { FiArrowRight, FiHelpCircle, FiMessageCircle, FiSettings, FiShield } from 'react-icons/fi';
 
-export const metadata = {
-  title: 'Documentation - ' + SITE_CONFIG.name,
-  description: 'Complete documentation for Nothing Discord music bot',
-};
+export const metadata = generateMetadata({
+  title: 'Documentation',
+  description: 'Official Nothing bot documentation with setup guides, permissions, and command workflow best practices.',
+  path: '/docs',
+});
 
 export default function DocsPage() {
   const quickStart = [
@@ -22,13 +24,13 @@ export default function DocsPage() {
       step: '02',
       title: 'Join Voice Channel',
       detail: 'Enter any voice channel, then run a music command so the bot joins automatically.',
-      code: '!play song name',
+      code: '!!play song name',
     },
     {
       step: '03',
       title: 'Control Playback',
       detail: 'Use queue and playback commands to skip, pause, reorder songs, and manage sessions.',
-      code: '!queue | !skip | !pause',
+      code: '!!queue | !!skip | !!pause',
     },
   ];
 
@@ -112,13 +114,13 @@ export default function DocsPage() {
           <article className="docs-panel-card">
             <h3>Playlist Workflow</h3>
             <p>Build playlists, save queue states, and share sets across your community channels.</p>
-            <code>!playlist create chill-vibes</code>
+            <code>!!playlist create chill-vibes</code>
           </article>
 
           <article className="docs-panel-card">
             <h3>Queue Management</h3>
             <p>Reorder, remove, and inspect tracks while the session is running without interrupting music.</p>
-            <code>!queue | !move 3 1 | !remove 2</code>
+            <code>!!queue | !!move 3 1 | !!remove 2</code>
           </article>
 
         </section>

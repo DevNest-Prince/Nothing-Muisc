@@ -7,20 +7,19 @@ export const SITE_CONFIG = {
   description: 'Experience the ultimate Discord music bot with Crystal clear audio, AI recommendations, and advanced playlist management.',
   tagline: 'The Perfect Discord Music Companion',
   version: '1.0.0',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://nothing-muisc.vercel.app',
   
   // URLs
   links: {
     github: 'https://github.com/Ankush26030',
     discord: 'https://discord.gg/w77ymEU82a',
-    support: 'https://support.nothing-bot.com',
     docs: '/docs',
-    api: 'https://api.nothing-bot.com',
     hostingPartner: 'https://glacierhosting.in/',
   },
   
   // Bot settings
   bot: {
-    prefix: '!',
+    prefix: '!!',
     inviteUrl: 'https://discord.com/oauth2/authorize?client_id=1234592539324059709&permissions=414530792793&integration_type=0&scope=bot+applications.commands',
   },
 
@@ -89,70 +88,70 @@ export const COMMANDS = [
     aliases: ['p'],
     category: 'Music',
     description: 'Play a song or playlist',
-    usage: '!play <song name or URL>',
+    usage: '!!play <song name or URL>',
   },
   {
     name: 'skip',
     aliases: ['s', 'next'],
     category: 'Music',
     description: 'Skip the current song',
-    usage: '!skip',
+    usage: '!!skip',
   },
   {
     name: 'stop',
     aliases: ['leave'],
     category: 'Music',
     description: 'Stop playing and disconnect from voice channel',
-    usage: '!stop',
+    usage: '!!stop',
   },
   {
     name: 'pause',
     aliases: ['hold'],
     category: 'Music',
     description: 'Pause the current song',
-    usage: '!pause',
+    usage: '!!pause',
   },
   {
     name: 'resume',
     aliases: ['r'],
     category: 'Music',
     description: 'Resume the paused song',
-    usage: '!resume',
+    usage: '!!resume',
   },
   {
     name: 'queue',
     aliases: ['q'],
     category: 'Music',
     description: 'Show the music queue',
-    usage: '!queue [page]',
+    usage: '!!queue [page]',
   },
   {
     name: 'nowplaying',
     aliases: ['np', 'current'],
     category: 'Music',
     description: 'Show the currently playing song',
-    usage: '!nowplaying',
+    usage: '!!nowplaying',
   },
   {
     name: 'playlist',
     aliases: ['pl'],
     category: 'Playlist',
     description: 'Create or manage playlists',
-    usage: '!playlist create <name>',
+    usage: '!!playlist create <name>',
   },
   {
     name: 'volume',
     aliases: ['vol'],
     category: 'Settings',
     description: 'Set the bot volume (0-100%)',
-    usage: '!volume <0-100>',
+    usage: '!!volume <0-100>',
   },
   {
     name: 'lyrics',
     aliases: ['ly'],
     category: 'Information',
     description: 'Get lyrics for the current song',
-    usage: '!lyrics',
+    usage: '!!lyrics',
   },
 ];
 

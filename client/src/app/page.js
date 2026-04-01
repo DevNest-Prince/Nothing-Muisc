@@ -46,10 +46,10 @@ const HERO_HIGHLIGHTS = [
 ];
 
 const COMMAND_PREVIEW = [
-  { cmd: '!play', desc: 'Play a song or playlist', icon: FiMusic, by: '@nightcorex', time: 'just now' },
-  { cmd: '!queue', desc: 'View and organize current queue', icon: FiList, by: '@aryan', time: '12s ago' },
-  { cmd: '!lyrics', desc: 'Show lyrics for active track', icon: FiCheckCircle, by: '@riya', time: '26s ago' },
-  { cmd: '!filter', desc: 'Enable bass boost/nightcore', icon: FiSliders, by: '@dev', time: '41s ago' },
+  { cmd: '!!play', desc: 'Play a song or playlist', icon: FiMusic, by: '@nightcorex', time: 'just now' },
+  { cmd: '!!queue', desc: 'View and organize current queue', icon: FiList, by: '@aryan', time: '12s ago' },
+  { cmd: '!!lyrics', desc: 'Show lyrics for active track', icon: FiCheckCircle, by: '@riya', time: '26s ago' },
+  { cmd: '!!filter', desc: 'Enable bass boost/nightcore', icon: FiSliders, by: '@dev', time: '41s ago' },
 ];
 
 const LIVE_PLAYLIST = [

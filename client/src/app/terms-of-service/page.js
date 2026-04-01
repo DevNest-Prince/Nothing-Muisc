@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import { generateMetadata } from '@/config/metadata';
 
-export const metadata = {
-  title: 'Terms of Service | Nothing',
-  description: 'Terms of Service for Nothing Discord music bot website.',
-};
+export const metadata = generateMetadata({
+  title: 'Terms of Service',
+  description: 'Review the Nothing terms of service, fair usage rules, and legal terms for site and bot usage.',
+  path: '/terms-of-service',
+});
 
 export default function TermsOfServicePage() {
   const trustItems = [

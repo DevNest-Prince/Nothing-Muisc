@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import { generateMetadata } from '@/config/metadata';
 
-export const metadata = {
-  title: 'Privacy Policy | Nothing',
-  description: 'Privacy Policy for Nothing Discord music bot website.',
-};
+export const metadata = generateMetadata({
+  title: 'Privacy Policy',
+  description: 'Read the Nothing privacy policy to understand data handling, retention, and user rights.',
+  path: '/privacy-policy',
+});
 
 export default function PrivacyPolicyPage() {
   const privacyItems = [

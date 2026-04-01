@@ -1,5 +1,5 @@
 import Button from '@/components/Button';
-import { SITE_CONFIG } from '@/config/site';
+import { generateMetadata } from '@/config/metadata';
 import {
   FiMusic,
   FiList,
@@ -17,10 +17,11 @@ import {
   FiArrowRight,
 } from 'react-icons/fi';
 
-export const metadata = {
-  title: 'Features - ' + SITE_CONFIG.name,
-  description: 'Discover all the amazing features of Nothing Discord music bot',
-};
+export const metadata = generateMetadata({
+  title: 'Features',
+  description: 'Explore Nothing Discord bot features including high-quality playback, smart queue controls, playlists, and performance tools.',
+  path: '/features',
+});
 
 const TOP_BADGES = [
   { icon: FiHeadphones, label: 'Studio-grade Playback' },

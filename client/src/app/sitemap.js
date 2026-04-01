@@ -1,7 +1,7 @@
 import { SITE_CONFIG } from '@/config/site';
 
 export default function sitemap() {
-  const baseUrl = 'https://nothing-bot.com';
+  const baseUrl = SITE_CONFIG.siteUrl;
 
   return [
     {
@@ -15,6 +15,12 @@ export default function sitemap() {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/bots`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
     },
     ...(SITE_CONFIG.features.showCommandsPage
       ? [
@@ -49,6 +55,18 @@ export default function sitemap() {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terms-of-service`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5,
     },
   ];
 }
