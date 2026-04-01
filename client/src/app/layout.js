@@ -32,7 +32,7 @@ export const metadata = {
     siteName: SITE_CONFIG.name,
     images: [
       {
-        url: `${SITE_CONFIG.siteUrl}/nothing-music-banner.png`,
+        url: `${SITE_CONFIG.siteUrl}/nothing-share-banner-v2.png?v=20260401`,
         width: 1200,
         height: 630,
         alt: `${SITE_CONFIG.name} music bot banner`,
@@ -43,7 +43,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
-    images: [`${SITE_CONFIG.siteUrl}/nothing-music-banner.png`],
+    images: [`${SITE_CONFIG.siteUrl}/nothing-share-banner-v2.png?v=20260401`],
   },
   robots: {
     index: true,
