@@ -24,13 +24,13 @@ export default function DocsPage() {
       step: '02',
       title: 'Join Voice Channel',
       detail: 'Enter any voice channel, then run a music command so the bot joins automatically.',
-      code: '!play song name',
+      code: '!!play song name',
     },
     {
       step: '03',
       title: 'Control Playback',
       detail: 'Use queue and playback commands to skip, pause, reorder songs, and manage sessions.',
-      code: '!queue | !skip | !pause',
+      code: '!!queue | !!skip | !!pause',
     },
   ];
 
@@ -114,13 +114,13 @@ export default function DocsPage() {
           <article className="docs-panel-card">
             <h3>Playlist Workflow</h3>
             <p>Build playlists, save queue states, and share sets across your community channels.</p>
-            <code>!playlist create chill-vibes</code>
+            <code>!!playlist create chill-vibes</code>
           </article>
 
           <article className="docs-panel-card">
             <h3>Queue Management</h3>
             <p>Reorder, remove, and inspect tracks while the session is running without interrupting music.</p>
-            <code>!queue | !move 3 1 | !remove 2</code>
+            <code>!!queue | !!move 3 1 | !!remove 2</code>
           </article>
 
         </section>
