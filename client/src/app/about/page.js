@@ -1,9 +1,11 @@
+import { generateMetadata } from '@/config/metadata';
 import { SITE_CONFIG } from '@/config/site';
 
-export const metadata = {
-  title: 'About - ' + SITE_CONFIG.name,
-  description: 'About Nothing Discord music bot - Our mission and story',
-};
+export const metadata = generateMetadata({
+  title: 'About Nothing',
+  description: 'Learn about Nothing Discord bot, our mission, and how we build reliable music experiences for communities.',
+  path: '/about',
+});
 
 export default function AboutPage() {
   const values = [

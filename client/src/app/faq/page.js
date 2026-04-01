@@ -1,15 +1,35 @@
 import FAQItem from '@/components/FAQItem';
+import { generateMetadata } from '@/config/metadata';
 import { FAQ_ITEMS, SITE_CONFIG } from '@/config/site';
 import { FiArrowRight, FiHelpCircle, FiMessageCircle } from 'react-icons/fi';
 
-export const metadata = {
-  title: 'FAQ - ' + SITE_CONFIG.name,
-  description: 'Frequently asked questions about Nothing Discord music bot',
+export const metadata = generateMetadata({
+  title: 'FAQ',
+  description: 'Frequently asked questions about Nothing bot setup, commands, playlists, billing, and troubleshooting.',
+  path: '/faq',
+});
+
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
 };
 
 export default function FAQPage() {
   return (
     <div className="faq-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+
       <section className="faq-hero container-main">
         <div className="faq-hero-panel animate-fade-in">
           <span className="faq-kicker">Support Center</span>

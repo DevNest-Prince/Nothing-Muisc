@@ -1,10 +1,12 @@
+import { generateMetadata } from '@/config/metadata';
 import { SITE_CONFIG } from '@/config/site';
 import { FiArrowRight, FiHelpCircle, FiMessageCircle, FiSettings, FiShield } from 'react-icons/fi';
 
-export const metadata = {
-  title: 'Documentation - ' + SITE_CONFIG.name,
-  description: 'Complete documentation for Nothing Discord music bot',
-};
+export const metadata = generateMetadata({
+  title: 'Documentation',
+  description: 'Official Nothing bot documentation with setup guides, permissions, and command workflow best practices.',
+  path: '/docs',
+});
 
 export default function DocsPage() {
   const quickStart = [

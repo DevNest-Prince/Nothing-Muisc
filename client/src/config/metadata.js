@@ -1,53 +1,79 @@
 import { SITE_CONFIG } from './site';
 
+const DEFAULT_KEYWORDS = [
+  'Discord music bot',
+  'Nothing bot',
+  'Discord bot music',
+  'Music commands discord',
+  'Discord playlist bot',
+  '24/7 music bot',
+];
+
+function normalizePath(path = '/') {
+  if (!path) {
+    return '/';
+  }
+
+  return path.startsWith('/') ? path : `/${path}`;
+}
+
+function toAbsoluteUrl(path = '/') {
+  return `${SITE_CONFIG.siteUrl}${normalizePath(path)}`;
+}
+
 /**
  * Dynamic metadata generator
  * Can be used in any page's metadata export
  */
 export function generateMetadata(overrides = {}) {
+  const currentPath = overrides.path || '/';
+  const canonicalUrl = overrides.canonical || toAbsoluteUrl(currentPath);
+  const pageTitle = overrides.title || SITE_CONFIG.title;
+
   return {
-    title: overrides.title || SITE_CONFIG.title,
+    metadataBase: new URL(SITE_CONFIG.siteUrl),
+    title: pageTitle,
     description: overrides.description || SITE_CONFIG.description,
-    keywords: overrides.keywords || [
-      'Discord',
-      'Music Bot',
-      'Nothing Bot',
-      'Spotify',
-      'YouTube Music',
-      'Queue Manager',
-    ],
+    keywords: overrides.keywords || DEFAULT_KEYWORDS,
     authors: [{ name: 'Nothing Bot Team' }],
     creator: 'Nothing Bot',
     publisher: 'Nothing Bot',
     openGraph: {
       type: 'website',
       locale: 'en_US',
-      url: overrides.url || 'https://nothing-bot.com',
+      url: overrides.url || canonicalUrl,
       siteName: SITE_CONFIG.name,
-      title: overrides.ogTitle || SITE_CONFIG.title,
+      title: overrides.ogTitle || pageTitle,
       description: overrides.ogDescription || SITE_CONFIG.description,
       images: overrides.images || [
         {
-          url: '/og-image.png',
+          url: toAbsoluteUrl('/mintone.jpg'),
           width: 1200,
           height: 630,
-          alt: SITE_CONFIG.name,
+          alt: `${SITE_CONFIG.name} Discord bot preview`,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: overrides.twitterTitle || SITE_CONFIG.title,
+      title: overrides.twitterTitle || pageTitle,
       description: overrides.twitterDescription || SITE_CONFIG.description,
-      images: overrides.twitterImages || ['/twitter-image.png'],
+      images: overrides.twitterImages || [toAbsoluteUrl('/mintone.jpg')],
       creator: '@nothinbotdev',
     },
     robots: {
-      index: true,
-      follow: true,
+      index: !overrides.noIndex,
+      follow: !overrides.noIndex,
+      googleBot: {
+        index: !overrides.noIndex,
+        follow: !overrides.noIndex,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
     },
     alternates: {
-      canonical: overrides.canonical || 'https://nothing-bot.com',
+      canonical: canonicalUrl,
     },
   };
 }
@@ -56,5 +82,5 @@ export function generateMetadata(overrides = {}) {
  * URL helper
  */
 export function getURL(path = '') {
-  return `https://nothing-bot.com${path}`;
+  return `${SITE_CONFIG.siteUrl}${normalizePath(path)}`;
 }

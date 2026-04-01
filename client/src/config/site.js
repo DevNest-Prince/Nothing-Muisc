@@ -7,6 +7,7 @@ export const SITE_CONFIG = {
   description: 'Experience the ultimate Discord music bot with Crystal clear audio, AI recommendations, and advanced playlist management.',
   tagline: 'The Perfect Discord Music Companion',
   version: '1.0.0',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://nothing-muisc.vercel.app',
   
   // URLs
   links: {
