@@ -47,7 +47,7 @@ export function generateMetadata(overrides = {}) {
       description: overrides.ogDescription || SITE_CONFIG.description,
       images: overrides.images || [
         {
-          url: toAbsoluteUrl('/mintone.jpg'),
+          url: toAbsoluteUrl('/nothing-music-banner.png'),
           width: 1200,
           height: 630,
           alt: `${SITE_CONFIG.name} Discord bot preview`,
@@ -58,7 +58,7 @@ export function generateMetadata(overrides = {}) {
       card: 'summary_large_image',
       title: overrides.twitterTitle || pageTitle,
       description: overrides.twitterDescription || SITE_CONFIG.description,
-      images: overrides.twitterImages || [toAbsoluteUrl('/mintone.jpg')],
+      images: overrides.twitterImages || [toAbsoluteUrl('/nothing-music-banner.png')],
       creator: '@nothinbotdev',
     },
     robots: {

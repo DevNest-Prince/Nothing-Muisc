@@ -32,10 +32,10 @@ export const metadata = {
     siteName: SITE_CONFIG.name,
     images: [
       {
-        url: `${SITE_CONFIG.siteUrl}/mintone.jpg`,
+        url: `${SITE_CONFIG.siteUrl}/nothing-music-banner.png`,
         width: 1200,
         height: 630,
-        alt: `${SITE_CONFIG.name} logo`,
+        alt: `${SITE_CONFIG.name} music bot banner`,
       },
     ],
   },
@@ -43,7 +43,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
-    images: [`${SITE_CONFIG.siteUrl}/mintone.jpg`],
+    images: [`${SITE_CONFIG.siteUrl}/nothing-music-banner.png`],
   },
   robots: {
     index: true,
