@@ -27,8 +27,8 @@ export default function BotsPage() {
 
             <div className="bots-hero-stats">
               <div className="bots-stat-chip">
-                <strong>4500+</strong>
-                <span>Active Servers</span>
+                <strong>{DISCORD_BOTS.length}</strong>
+                <span>Bot Options</span>
               </div>
               <div className="bots-stat-chip">
                 <strong>{freeBots}</strong>

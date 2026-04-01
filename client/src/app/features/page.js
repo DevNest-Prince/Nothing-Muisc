@@ -30,7 +30,7 @@ const TOP_BADGES = [
 
 const FEATURE_STATS = [
   { label: 'Daily Listeners', value: '5M+' },
-  { label: 'Server Sessions', value: '50K+' },
+  { label: 'Active Server', value: '4500+' },
   { label: 'Playback Uptime', value: '99.9%' },
 ];
 
